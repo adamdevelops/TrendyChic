@@ -4,7 +4,7 @@
 }
 
 #header {
-  padding-top: 1%;
+  /* padding-top: 1%; */
 }
 
 #logo-area{
@@ -21,20 +21,22 @@
   font-family: 'Pacifico', cursive;
   font-size: 3rem;
   overflow-y: hidden;
+  margin-bottom: 0 !important;
   padding-left: 5%;
+  line-height: normal;
 }
 
 
 #user-menu {
   float: right;
+  position: absolute;
   width: 200px;
   margin-right: 10px;
   display: inline-block;
   position: relative;
   top: 0;
   right: 0;
-  padding-top: 1%
-  ;
+  padding-top: 3%;
   /* border: 1px solid; */
 }
 
@@ -124,4 +126,58 @@
 
 .pointer{
   cursor: pointer;
+}
+
+#search-bar{
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 220px;
+  /* padding-top: 10px; */
+}
+
+input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  /* background-image: url('searchicon.png'); */
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

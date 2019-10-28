@@ -6,6 +6,13 @@ class Header extends Component {
   constructor(props){
     super(props);
 
+    this.state = {showSearchBar: false};
+
+    this.openSearchBar = this.openSearchBar.bind(this);
+  }
+
+  openSearchBar() {
+    this.setState({showSearchBar: !this.state.showSearchBar});
   }
 
   render(){
@@ -14,10 +21,15 @@ class Header extends Component {
         <div id="logo-area">
           <h1 className="logo">TrendyChic</h1>
         </div>
+        { this.state.showSearchBar &&
+          <div id="search-bar">
+            <input type="text" name="search" placeholder="Search.." />
+          </div>
+        }
         <div id="user-menu">
-          <i className="user-icon fa fa-search fa-3x" aria-hidden="true"></i>
-          <i className="user-icon fa fa-user-circle fa-3x" aria-hidden="true"></i>
-          <i className="user-icon fa fa-shopping-bag fa-3x" aria-hidden="true"></i>
+          <i className="user-icon fa fa-search fa-2x pointer" aria-hidden="true" onClick={this.openSearchBar}></i>
+          <i className="user-icon fa fa-user-circle fa-2x pointer" aria-hidden="true"></i>
+          <i className="user-icon fa fa-shopping-bag fa-2x pointer" aria-hidden="true"></i>
         </div>
       </div>
     );
