@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom'
 import '../styles.css';
 
 class MainMenu extends Component {
@@ -7,9 +8,9 @@ class MainMenu extends Component {
   render(){
     return(
       <div id="mainmenu">
-        <a className="menu_item pointer">Home</a>
-        <a className="menu_item pointer">About</a>
-        <a className="menu_item pointer">Clothing</a>
+        <Link className="menu_item pointer" to="/">Home</Link>
+        <Link className="menu_item pointer" to="/">About</Link>
+        <Link className="menu_item pointer" to="/clothing">Clothing</Link>
       </div>
     );
   }
