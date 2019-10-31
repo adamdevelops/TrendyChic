@@ -9,6 +9,7 @@ import Featured from './Featured';
 import Footer from './Footer';
 import Home from './Home';
 import Clothing from './Clothing';
+import ItemGrid from './ItemGrid';
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
         <MainMenu />
         <Route exact path="/" component={Home} />
         <Route path="/clothing" component={Clothing} />
+        <Route path="/item" component={ItemGrid} />
         <Footer />
       </div>
     </Router>

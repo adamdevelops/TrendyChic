@@ -91,9 +91,6 @@
   height: 500px;
 }
 
-#shoes{
-  min-width: 300px;
-}
 
 .feat_name{
   margin-bottom: 10px;
@@ -104,6 +101,34 @@
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
 }
+
+#item-area{
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 500px;
+  max-height: 500px;
+  margin: 30px 30px;
+}
+
+#side-menu{
+  background-color: #33bced;
+}
+
+#item-grid{
+  background-color: #50D050;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding-left: 50px;
+}
+
+.item-product{
+  background-color: yellow;
+  border: solid;
+  border-color: #777;
+
+}
+
 
 #footer{
   text-align: center;
