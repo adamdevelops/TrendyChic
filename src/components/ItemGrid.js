@@ -19,20 +19,75 @@ class ItemGrid extends Component {
   render(){
     return(
       <div id="item-area">
-        <aside id="side-menu">
+        <div id="side-menu">
           <h3>Filters</h3>
           <div className="size-box">
             <h5>Size:</h5>
             <ul>
-              <li className=""><a>XS</a></li>
-              <li className=""><a>S</a></li>
-              <li className=""><a>M</a></li>
-              <li className=""><a>L</a></li>
-              <li className=""><a>XL</a></li>
-              <li className=""><a>XXL</a></li>
+              <li className="">
+                <a>
+                  <label class="container">XS
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
+              <li className="">
+                <a>
+                  <label class="container">S
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
+              <li className="">
+                <a>
+                  <label class="container">M
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
+              <li className="">
+                <a>
+                  <label class="container">L
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
+              <li className="">
+                <a>
+                  <label class="container">XL
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
+              <li className="">
+                <a>
+                  <label class="container">XXL
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
             </ul>
           </div>
-        </aside>
+          <div className="color-box">
+            <h5>Color:</h5>
+            <ul>
+              <li className="">
+                <a>
+                  <label class="container">XS
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div id="item-grid">
           <div className="item-product">
             1
