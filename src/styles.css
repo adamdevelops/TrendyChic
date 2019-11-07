@@ -190,6 +190,54 @@
  transform: rotate(45deg);
 }
 
+.color-list{
+  height: 80px;
+  overflow-y: scroll;
+}
+
+.swatch{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: 4%;
+  border: grey 1px solid;
+}
+
+.color-swatch-black{
+  background-color: black;
+}
+
+.color-swatch-blue{
+  background-color: blue;
+}
+
+.color-swatch-red{
+  background-color: red;
+}
+
+.color-swatch-green{
+  background-color: green;
+}
+
+.color-swatch-grey{
+  background-color: grey;
+}
+
+.color-swatch-white{
+  background-color: white;
+}
+
+.color-swatch-purple{
+  background-color: purple;
+}
+
+.color-swatch-yellow{
+  background-color: yellow;
+}
+
+.color-swatch-brown{
+  background-color: brown;
+}
 
 #item-grid{
   background-color: #50D050;

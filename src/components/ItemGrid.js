@@ -76,11 +76,36 @@ class ItemGrid extends Component {
           </div>
           <div className="color-box">
             <h5>Color:</h5>
-            <ul>
-              <li className="">
-                <a>    </a>
-              </li>
-            </ul>
+              <ul className="color-list">
+                <li className="swatch color-swatch-black">
+                  <a>  </a>
+                </li>
+                <li className="swatch color-swatch-blue">
+                  <a>  </a>
+                </li>
+                <li className="swatch color-swatch-red">
+                  <a>  </a>
+                </li>   <br />
+                <li className="swatch color-swatch-green">
+                    <a>  </a>
+                </li>
+                <li className="swatch color-swatch-white">
+                  <a>  </a>
+                </li>
+                <li className="swatch color-swatch-grey">
+                  <a>  </a>
+                </li>   <br />
+                <li className="swatch color-swatch-purple">
+                  <a>  </a>
+                </li>
+                <li className="swatch color-swatch-brown">
+                  <a>  </a>
+                </li>
+                <li className="swatch color-swatch-yellow">
+                  <a>  </a>
+                </li>  <br />
+
+              </ul>
           </div>
         </div>
         <div id="item-grid">
