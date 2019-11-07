@@ -78,12 +78,7 @@ class ItemGrid extends Component {
             <h5>Color:</h5>
             <ul>
               <li className="">
-                <a>
-                  <label class="container">XS
-                    <input type="checkbox" />
-                    <span class="checkmark"></span>
-                  </label>
-                </a>
+                <a>    </a>
               </li>
             </ul>
           </div>
