@@ -105,8 +105,8 @@
 #item-area{
   display: grid;
   grid-template-columns: 25% 75%;
-  height: 500px;
-  max-height: 500px;
+  height: 100vh;
+  max-height: 100vh;
   margin: 30px 30px;
 }
 
@@ -237,6 +237,18 @@
 
 .color-swatch-brown{
   background-color: brown;
+}
+
+.color-swatch-orange{
+  background-color: orange;
+}
+
+.color-swatch-pink{
+  background-color: pink;
+}
+
+.color-swatch-nude{
+  background-color: #fce2d1;
 }
 
 #item-grid{
