@@ -96,40 +96,40 @@ class ItemGrid extends Component {
           <div className="color-box">
             <h5>Color:</h5>
             <ul className="color-list">
-              <li className="swatch color-swatch-black">
+              <li className="swatch color-swatch-black pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-blue">
+              <li className="swatch color-swatch-blue pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-red">
+              <li className="swatch color-swatch-red pointer">
                 <a>  </a>
               </li>   <br />
-              <li className="swatch color-swatch-nude">
+              <li className="swatch color-swatch-nude pointer">
                   <a>  </a>
               </li>
-              <li className="swatch color-swatch-white">
+              <li className="swatch color-swatch-white pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-grey">
+              <li className="swatch color-swatch-grey pointer">
                 <a>  </a>
               </li>   <br />
-              <li className="swatch color-swatch-purple">
+              <li className="swatch color-swatch-purple pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-brown">
+              <li className="swatch color-swatch-brown pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-yellow">
+              <li className="swatch color-swatch-yellow pointer">
                 <a>  </a>
               </li>  <br />
-              <li className="swatch color-swatch-orange">
+              <li className="swatch color-swatch-orange pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-pink">
+              <li className="swatch color-swatch-pink pointer">
                 <a>  </a>
               </li>
-              <li className="swatch color-swatch-green">
+              <li className="swatch color-swatch-green pointer">
                 <a>  </a>
               </li>  <br />
             </ul>
@@ -148,31 +148,49 @@ class ItemGrid extends Component {
         </div>
         <div id="item-grid">
           <div className="item-product">
-            1
+            <img className="item" src="/tops/1.jpg" />
+            <p className="item-name">Light Blue Dress</p>
+            <p className="item-price">$20</p>
           </div>
           <div className="item-product">
-            2
+            <img className="item" src="/tops/4.jpg" />
+            <p className="item-name">Nude Dress with Blue Floral Design</p>
+            <p className="item-price">$20</p>
           </div>
           <div className="item-product">
-            3
+            <img className="item" src="/tops/5.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            4
+            <img className="item" src="/tops/6.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            5
+            <img className="item" src="/tops/7.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            6
+            <img className="item" src="/tops/8.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            7
+            <img className="item" src="/tops/9.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            8
+            <img className="item" src="/tops/3.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            9
+            <img className="item" src="/tops/3.jpg" />
+            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-price">$15</p>
           </div>
         </div>
       </div>

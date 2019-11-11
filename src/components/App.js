@@ -17,14 +17,12 @@ const App = () => {
 
   return (
     <Router>
-      <div>
         <Header />
         <MainMenu />
         <Route exact path="/" component={Home} />
         <Route path="/clothing" component={Clothing} />
         <Route path="/item" component={ItemGrid} />
         <Footer />
-      </div>
     </Router>
   );
 }
