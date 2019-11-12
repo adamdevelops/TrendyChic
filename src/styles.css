@@ -30,7 +30,6 @@
 
 #user-menu {
   float: right;
-  position: absolute;
   width: 200px;
   margin-right: 10px;
   display: inline-block;
@@ -38,6 +37,7 @@
   top: 0;
   right: 0;
   padding-top: 3%;
+  overflow-y: hidden;
   /* border: 1px solid; */
 }
 
@@ -259,11 +259,8 @@
   /* background-color: #50D050; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: min(600px, auto);
   grid-gap: 30px;
   padding-left: 50px;
-  /* height: 100vh;
-  min-height: 100vh; */
   overflow-y: hidden;
 }
 
@@ -275,12 +272,46 @@
   height: 500px;
 }
 
-#checkout_section{
+#checkout-section{
+  display: inline-block;
+}
+
+#checkout_cart{
+  width: 600px;
+  margin: 30px 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.checkout-items{
+  /* width: 600px; */
+}
+
+.checkout-item{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .checkout-item-pic{
   height: 300px;
   width: 300px;
+}
+
+.item-name{
+  padding-left: 20px;
+}
+
+.item-price{
+  padding-left: 20px;
+}
+
+.remove_button{
+  margin-left: 20px;
+}
+
+.checkout-price{
+  width: 400px;
+  display: inline-block;
 }
 
 
@@ -313,6 +344,14 @@
   top: 40px;
   right: 220px;
   /* padding-top: 10px; */
+}
+
+.fleft{
+  float: left;
+}
+
+.fright{
+  float: right;
 }
 
 input[type=text] {

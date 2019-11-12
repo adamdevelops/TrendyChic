@@ -9,21 +9,45 @@ class Checkout extends Component {
     super(props);
 
     this.state = {
-
+      checkout: null
     };
 
   }
 
   render(){
     return(
-      <div id="checkout_section">
-        <h1>Checkout</h1>
-          <div className="checkout-item">
-            <img className="checkout-item-pic" src="/tops/7.jpg" />
-            <p className="item-name">White Dress with Black Design</p>
-            <p className="item-price">$15</p>
+      <div id="checkout-section">
+        <div id="checkout_cart">
+          <h1>Checkout</h1>
+          <div className="checkout-items">
+            <div className="checkout-item">
+              <img className="checkout-item-pic fleft" src="/tops/7.jpg" />
+              <p className="item-name">White Dress with Black Design</p>
+              <p className="item-price">$15</p>
+              <button className="remove_button">Remove</button>
+            </div>
+            <hr />
+            <div className="checkout-item">
+              <img className="checkout-item-pic fleft" src="/tops/1.jpg" />
+              <p className="item-name">White Dress with Black Design</p>
+              <p className="item-price">$15</p>
+              <button className="remove_button">Remove</button>
+            </div>
+            <hr />
+            <div className="checkout-item">
+              <img className="checkout-item-pic fleft" src="/tops/3.jpg" />
+              <p className="item-name">White Dress with Black Design</p>
+              <p className="item-price">$15</p>
+              <button className="remove_button">Remove</button>
+            </div>
+            <hr />
           </div>
+        </div>
+        <div className="checkout-price">
+          <h1>Price:</h1>
+        </div>
       </div>
+
     );
   }
 }
