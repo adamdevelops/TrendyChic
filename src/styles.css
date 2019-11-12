@@ -3,9 +3,6 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/* html, body{
-  height: 100%;
-} */
 
 #header {
   /* padding-top: 1%; */
@@ -109,9 +106,6 @@
 #item-area{
   display: grid;
   grid-template-columns: 25% 75%;
-  /* height: 100vh; */
-  height: 100vh !important;
-  min-height: 100vh !important;
   margin: 30px 30px;
   align-items: stretch;
   overflow-y: hidden;
@@ -265,10 +259,11 @@
   /* background-color: #50D050; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: min(600px, auto);
   grid-gap: 30px;
   padding-left: 50px;
-  height: 100vh;
-  min-height: 100vh;
+  /* height: 100vh;
+  min-height: 100vh; */
   overflow-y: hidden;
 }
 
@@ -278,6 +273,14 @@
 
 .item{
   height: 500px;
+}
+
+#checkout_section{
+}
+
+.checkout-item-pic{
+  height: 300px;
+  width: 300px;
 }
 
 

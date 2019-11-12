@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom'
+
 import '../styles.css';
 
 class Header extends Component {
@@ -29,7 +31,7 @@ class Header extends Component {
         <div id="user-menu">
           <i className="user-icon fa fa-search fa-2x pointer" aria-hidden="true" onClick={this.openSearchBar}></i>
           <i className="user-icon fa fa-user-circle fa-2x pointer" aria-hidden="true"></i>
-          <i className="user-icon fa fa-shopping-bag fa-2x pointer" aria-hidden="true"></i>
+          <i className="user-icon fa fa-shopping-bag fa-2x pointer" aria-hidden="true"><Link className="menu_item pointer" to="/checkout"></Link></i>
         </div>
       </div>
     );

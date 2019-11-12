@@ -10,7 +10,7 @@ import Footer from './Footer';
 import Home from './Home';
 import Clothing from './Clothing';
 import ItemGrid from './ItemGrid';
-
+import Checkout from './Checkout';
 
 
 const App = () => {
@@ -22,6 +22,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route path="/clothing" component={Clothing} />
         <Route path="/item" component={ItemGrid} />
+        <Route path="/checkout" component={Checkout} />
         <Footer />
     </Router>
   );
