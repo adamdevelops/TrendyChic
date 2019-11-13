@@ -45,6 +45,11 @@ class Checkout extends Component {
         </div>
         <div className="checkout-price">
           <h1>Price:</h1>
+          <br />
+          <h5 className="checkout-total">Merchandise: <p className="fright">$60</p></h5>
+          <h5>Fees: <p className="fright">$0.00</p></h5>
+          <h5>Final: <p className="fright">$60</p></h5>
+          <button className="fright">Checkout</button>
         </div>
       </div>
 

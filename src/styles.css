@@ -280,7 +280,6 @@
   width: 600px;
   margin: 30px 30px;
   display: inline-block;
-  vertical-align: top;
 }
 
 .checkout-items{
@@ -311,7 +310,9 @@
 
 .checkout-price{
   width: 400px;
+  margin: 30px 30px;
   display: inline-block;
+  vertical-align: top;
 }
 
 
