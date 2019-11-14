@@ -266,6 +266,7 @@
 
 .item-product{
   height: 600px;
+  overflow-y: hidden;
 }
 
 .item{
@@ -315,6 +316,10 @@
   vertical-align: top;
 }
 
+.favorites{
+  float: right;
+}
+
 
 #footer{
   text-align: center;
@@ -337,6 +342,8 @@
 
 .pointer{
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 #search-bar{
