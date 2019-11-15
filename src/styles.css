@@ -44,7 +44,7 @@
 .user-icon{
   display: inline;
   padding-right: 10%;
-}
+  }
 
 #mainmenu{
   text-align: center;
@@ -316,8 +316,27 @@
   vertical-align: top;
 }
 
+#account-section{
+
+}
+
+.recent-orders{
+  width: 40%;
+  margin: 30px 30px;
+  display: inline-block;
+
+}
+
 .favorites{
-  float: right;
+  margin: 30px 30px;
+  width: auto !important;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fav-item-pic{
+  width: 100px;
+  height: 100px;
 }
 
 
