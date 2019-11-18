@@ -29,7 +29,7 @@ class Account extends Component {
         <div className="favorites">
           <h1>Favorites</h1>
             <div className="checkout-item">
-              <img className="fav-item-pic fleft" src="/tops/7.jpg" />
+              <img className="fav-item-pic fleft" src="/tops/8.jpg" />
               <p className="item-name">White Dress with Black Design</p>
               <p className="item-price">$15</p>
               <button className="remove_button">Remove</button>
