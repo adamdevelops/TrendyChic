@@ -7,7 +7,7 @@ const initialState = {
         favorites: []
       }],
       clothing: [
-        {id: 1, name: "Light Blue Dress", price: "20"}
+        {id: 1, name: "Light Blue Dress", price: "20", imgSrc: "/tops/1.jpg"}
       ]
 
     }]

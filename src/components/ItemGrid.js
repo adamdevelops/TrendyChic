@@ -37,7 +37,11 @@ class ItemGrid extends Component {
     console.log('Change event completed')
   };
 
+
+
   render(){
+    console.log('props')
+    console.log(this.props.clothing)
     return(
       <div id="item-area">
         <div id="side-menu">
@@ -47,49 +51,49 @@ class ItemGrid extends Component {
             <ul>
               <li className="">
                 <a>
-                  <label class="container">XS
+                  <label className="container">XS
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </a>
               </li>
               <li className="">
                 <a>
-                  <label class="container">S
+                  <label className="container">S
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </a>
               </li>
               <li className="">
                 <a>
-                  <label class="container">M
+                  <label className="container">M
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </a>
               </li>
               <li className="">
                 <a>
-                  <label class="container">L
+                  <label className="container">L
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </a>
               </li>
               <li className="">
                 <a>
-                  <label class="container">XL
+                  <label className="container">XL
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </a>
               </li>
               <li className="">
                 <a>
-                  <label class="container">XXL
+                  <label className="container">XXL
                     <input type="checkbox" />
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </label>
                 </a>
               </li>
@@ -150,9 +154,9 @@ class ItemGrid extends Component {
         </div>
         <div id="item-grid">
           <div className="item-product">
-            <img className="item" src="/tops/1.jpg" alt="clothing item" />
-            <p className="item-name">Light Blue Dress</p>
-            <p className="item-price">$20</p> <button className="addtoCart_btn">Add</button>
+            <img className="item" src={this.props.clothing[0].imgSrc} alt="clothing item" />
+            <p className="item-name">{this.props.clothing[0].name}</p>
+            <p className="item-price">${this.props.clothing[0].price}</p> <button className="addtoCart_btn">Add</button>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/4.jpg" alt="clothing item" />
@@ -202,8 +206,8 @@ class ItemGrid extends Component {
 
 const mapStateToProps = (state) => {
   console.log('State in ItemGrid')
-  console.log(state)
-  return {clothing: state.clothing}
+  console.log(state.apps[0].clothing)
+  return {clothing: state.apps[0].clothing}
 }
 
 export default connect(mapStateToProps, {addITEM})(ItemGrid);
