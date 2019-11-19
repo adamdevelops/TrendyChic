@@ -273,6 +273,10 @@
   height: 500px;
 }
 
+.addtoCart_btn{
+  float: right;
+}
+
 #checkout-section{
   display: inline-block;
 }

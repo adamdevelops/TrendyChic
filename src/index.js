@@ -5,7 +5,6 @@ import { createStore } from 'redux';
 
 
 import App from './components/App'
-import MainMenu from './components/MainMenu'
 
 import reducers from './reducers'
 

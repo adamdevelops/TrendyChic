@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import Slider from 'react-rangeslider'
+// import Slider from 'react-rangeslider'
 import '../styles.css';
-import 'react-rangeslider/lib/index.css'
+// import 'react-rangeslider/lib/index.css'
 
 
 class ItemGrid extends Component {
@@ -10,14 +9,19 @@ class ItemGrid extends Component {
     super(props, context);
 
     this.state = {
-      slidervalue: 5
+
     };
 
     this.openSearchBar = this.openSearchBar.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   openSearchBar() {
     this.setState({showSearchBar: !this.state.showSearchBar});
+  }
+
+  addToCart(){
+
   }
 
   handleChangeStart = () => {
@@ -35,7 +39,6 @@ class ItemGrid extends Component {
   };
 
   render(){
-    const { slidervalue } = this.state
     return(
       <div id="item-area">
         <div id="side-menu">
@@ -148,47 +151,47 @@ class ItemGrid extends Component {
         </div>
         <div id="item-grid">
           <div className="item-product">
-            <img className="item" src="/tops/1.jpg" />
+            <img className="item" src="/tops/1.jpg" alt="clothing item" />
             <p className="item-name">Light Blue Dress</p>
-            <p className="item-price">$20</p>
+            <p className="item-price">$20</p> <button className="addtoCart_btn">Add</button>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/4.jpg" />
+            <img className="item" src="/tops/4.jpg" alt="clothing item" />
             <p className="item-name">Nude Dress with Blue Floral Design</p>
             <p className="item-price">$20</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/5.jpg" />
+            <img className="item" src="/tops/5.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/6.jpg" />
+            <img className="item" src="/tops/6.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/7.jpg" />
+            <img className="item" src="/tops/7.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/8.jpg" />
+            <img className="item" src="/tops/8.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/9.jpg" />
+            <img className="item" src="/tops/9.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/3.jpg" />
+            <img className="item" src="/tops/3.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
-            <img className="item" src="/tops/3.jpg" />
+            <img className="item" src="/tops/3.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
             <p className="item-price">$15</p>
           </div>

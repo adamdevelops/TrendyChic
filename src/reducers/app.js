@@ -6,7 +6,9 @@ const initialState = {
         history: [],
         favorites: []
       }],
-      clothing: []
+      clothing: [
+        {id: 1, name: "Light Blue Dress", price: "20"}
+      ]
 
     }]
 };
@@ -15,29 +17,26 @@ const appsReducer = (state = initialState.app, action) => {
   console.log('inside reducer');
   console.log(state);
 
+
+
   switch(action.type) {
-    case 'ADD_TODO':
+    case 'ADD_CART':
       console.log('inside if reducer in reducer');
 
-      return [
-        ...state,
-        action.payload
-      ];
+
+
+      return state;
 
     case 'DELETE_TODO':
       console.log('inside delete case');
 
-      return newState;
+      return state;
 
     case 'EDIT_TODO':
       console.log('inside edit case');
 
       // Otherwise, this is the one we want - return an updated value
-      return {
-          ...todo,
-          ...action.payload
-        }
-      })
+      return state;
 
     default:
       return state;
