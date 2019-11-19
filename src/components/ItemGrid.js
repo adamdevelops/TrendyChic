@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { addITEM } from '../actions';
 // import Slider from 'react-rangeslider'
 import '../styles.css';
 // import 'react-rangeslider/lib/index.css'
@@ -8,9 +10,6 @@ class ItemGrid extends Component {
   constructor(props, context){
     super(props, context);
 
-    this.state = {
-
-    };
 
     this.openSearchBar = this.openSearchBar.bind(this);
     this.addToCart = this.addToCart.bind(this);
@@ -201,4 +200,10 @@ class ItemGrid extends Component {
   }
 }
 
-export default ItemGrid;
+const mapStateToProps = (state) => {
+  console.log('State in ItemGrid')
+  console.log(state)
+  return {clothing: state.clothing}
+}
+
+export default connect(mapStateToProps, {addITEM})(ItemGrid);
