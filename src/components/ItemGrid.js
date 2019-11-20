@@ -165,38 +165,38 @@ class ItemGrid extends Component {
           </div>
           <div className="item-product">
             <img className="item" src="/tops/5.jpg" alt="clothing item" />
-            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-name">White Dress with Gold Design</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/6.jpg" alt="clothing item" />
-            <p className="item-name">White Dress with Black Design</p>
+            <p className="item-name">Brown Button Shirt</p>
             <p className="item-price">$15</p>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/7.jpg" alt="clothing item" />
-            <p className="item-name">White Dress with Black Design</p>
-            <p className="item-price">$15</p>
+            <p className="item-name">Yellow Dress</p>
+            <p className="item-price">$27</p>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/8.jpg" alt="clothing item" />
-            <p className="item-name">White Dress with Black Design</p>
-            <p className="item-price">$15</p>
+            <p className="item-name">White Dress with Flower Design</p>
+            <p className="item-price">$40</p>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/9.jpg" alt="clothing item" />
-            <p className="item-name">White Dress with Black Design</p>
-            <p className="item-price">$15</p>
+            <p className="item-name">White Blossom Mary shirt</p>
+            <p className="item-price">$13</p>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/3.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
-            <p className="item-price">$15</p>
+            <p className="item-price">$22</p>
           </div>
           <div className="item-product">
             <img className="item" src="/tops/3.jpg" alt="clothing item" />
             <p className="item-name">White Dress with Black Design</p>
-            <p className="item-price">$15</p>
+            <p className="item-price">$22</p>
           </div>
         </div>
       </div>
