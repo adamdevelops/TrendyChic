@@ -1,6 +1,6 @@
 const initialState = {
     app: [{
-      search: '',
+      search: 'hi',
       act: [{
         cart: [],
         history: [],
@@ -16,23 +16,27 @@ const initialState = {
         {id: 7, name: "White Blossom Mary shirt", price: "13", imgSrc: "/tops/9.jpg"},
         {id: 8, name: "White Dress with Black Design", price: "22", imgSrc: "/tops/3.jpg"},
         {id: 9, name: "White Dress with Black Design", price: "22", imgSrc: "/tops/3.jpg"}
-
       ]
-
     }]
 };
 
 const appsReducer = (state = initialState.app, action) => {
   console.log('inside reducer');
-  console.log(state);
+  console.log(state[0].act[0]);
+  let cart = state[0].act[0].cart;
 
 
 
   switch(action.type) {
     case 'ADD_CART':
-      console.log('inside if reducer in reducer');
+      console.log('inside add case');
 
-
+      console.log('Action:');
+      console.log(action.payload);
+      console.log('State:');
+      console.log(state);
+      console.log('Cart:');
+      console.log(cart);
 
       return state;
 

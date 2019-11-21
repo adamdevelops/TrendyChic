@@ -19,8 +19,8 @@ class ItemGrid extends Component {
     this.setState({showSearchBar: !this.state.showSearchBar});
   }
 
-  addToCart(){
-
+  addToCart = (event, item) => {
+    this.props.addITEM(item);
   }
 
   handleChangeStart = () => {
@@ -43,7 +43,7 @@ class ItemGrid extends Component {
         <div className="item-product" key={item.id}>
           <img className="item" src={item.imgSrc} alt="clothing item" />
           <p className="item-name">{item.name}</p>
-          <p className="item-price">${item.price}</p> <button className="addtoCart_btn">Add</button>
+          <p className="item-price">${item.price}</p> <button className="addtoCart_btn" onClick={(event) => this.addToCart(event, item)}>Add</button>
         </div>
       )
     }
