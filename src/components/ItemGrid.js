@@ -175,8 +175,8 @@ class ItemGrid extends Component {
 
 const mapStateToProps = (state) => {
   console.log('State in ItemGrid')
-  console.log(state.apps[0].clothing)
-  return {clothing: state.apps[0].clothing}
+  console.log(state.apps.clothing)
+  return {clothing: state.apps.clothing}
 }
 
 export default connect(mapStateToProps, {addITEM})(ItemGrid);

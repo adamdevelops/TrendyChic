@@ -1,11 +1,10 @@
 const initialState = {
-    app: [{
       search: 'hi',
-      act: [{
+      act: {
         cart: [],
         history: [],
         favorites: []
-      }],
+      },
       clothing: [
         {id: 1, name: "Light Blue Dress", price: "20", imgSrc: "/tops/1.jpg"},
         {id: 2, name: "Nude Dress with Blue Floral Design", price: "20", imgSrc: "/tops/4.jpg"},
@@ -17,13 +16,12 @@ const initialState = {
         {id: 8, name: "White Dress with Black Design", price: "22", imgSrc: "/tops/3.jpg"},
         {id: 9, name: "White Dress with Black Design", price: "22", imgSrc: "/tops/3.jpg"}
       ]
-    }]
 };
 
-const appsReducer = (state = initialState.app, action) => {
+const appsReducer = (state = initialState, action) => {
   console.log('inside reducer');
-  console.log(state[0].act[0]);
-  let cart = state[0].act[0].cart;
+  console.log(state.act);
+
 
 
 
@@ -36,16 +34,23 @@ const appsReducer = (state = initialState.app, action) => {
       console.log('State:');
       console.log(state);
       console.log('Cart:');
-      console.log(cart);
+      console.log(state.act.cart);
 
-      return state;
 
-    case 'DELETE_TODO':
+      return {
+        ...state,
+        act : {
+            ...state.act,
+            cart : state.act.cart.concat(action.payload)
+        }
+      };
+
+    case 'DELETE_CART_ITEM':
       console.log('inside delete case');
 
       return state;
 
-    case 'EDIT_TODO':
+    case 'EDIT_CART':
       console.log('inside edit case');
 
       // Otherwise, this is the one we want - return an updated value
