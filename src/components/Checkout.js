@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { deleteCART_ITEM } from '../actions';
 
 
 
@@ -7,38 +9,44 @@ class Checkout extends Component {
     super(props);
 
     this.state = {
-      checkout: null
+      checkout_price: 0
     };
+
+    this.renderCart = this.renderCart.bind(this);
 
   }
 
+  renderCart(){
+    return this.props.cart.map((cart_item) => {
+      return(
+        <div key={cart_item.id}>
+          <div className="checkout-item" key={cart_item.id}>
+            <img className="checkout-item-pic fleft" src={cart_item.imgSrc} alt="clothing item"/>
+            <p className="item-name">{cart_item.name}</p>
+            <p className="item-price">${cart_item.price}</p>
+            <button className="remove_button">Remove</button>
+          </div>
+          <hr />
+        </div>
+      )
+      this.setState({checkout_price: this.state.checkout_price + cart_item.price});
+
+    }
+  )
+
+
+
+}
+
   render(){
+    console.log('Checkout price');
+    console.log(this.state.checkout_price);
     return(
       <div id="checkout-section">
         <div id="checkout_cart">
           <h1>Checkout</h1>
           <div className="checkout-items">
-            <div className="checkout-item">
-              <img className="checkout-item-pic fleft" src="/tops/7.jpg" alt="clothing item"/>
-              <p className="item-name">White Dress with Black Design</p>
-              <p className="item-price">$15</p>
-              <button className="remove_button">Remove</button>
-            </div>
-            <hr />
-            <div className="checkout-item">
-              <img className="checkout-item-pic fleft" src="/tops/1.jpg" alt="clothing item"/>
-              <p className="item-name">White Dress with Black Design</p>
-              <p className="item-price">$15</p>
-              <button className="remove_button">Remove</button>
-            </div>
-            <hr />
-            <div className="checkout-item">
-              <img className="checkout-item-pic fleft" src="/tops/3.jpg" alt="clothing item"/>
-              <p className="item-name">White Dress with Black Design</p>
-              <p className="item-price">$15</p>
-              <button className="remove_button">Remove</button>
-            </div>
-            <hr />
+            {this.renderCart()}
           </div>
         </div>
         <div className="checkout-price">
@@ -55,4 +63,10 @@ class Checkout extends Component {
   }
 }
 
-export default Checkout;
+const mapStateToProps = (state) => {
+  console.log('State in Cart')
+  console.log(state.apps.act.cart)
+  return {cart: state.apps.act.cart}
+}
+
+export default connect(mapStateToProps, {deleteCART_ITEM})(Checkout);
