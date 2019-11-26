@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { deleteCART_ITEM } from '../actions';
 
-
-
 class Checkout extends Component {
   constructor(props){
     super(props);
@@ -14,10 +12,29 @@ class Checkout extends Component {
 
     this.renderCart = this.renderCart.bind(this);
 
+
   }
+
+
+  componentDidMount(){
+    return this.props.cart.map((cart_item) => {
+        let itemPrices = this.state.checkout_price;
+        console.log('itemPrice');
+
+        itemPrices = itemPrices + cart_item.price;
+            console.log(itemPrices);
+
+        this.setState({checkout_price: itemPrices});
+
+      }
+    )
+  }
+
+
 
   renderCart(){
     return this.props.cart.map((cart_item) => {
+
       return(
         <div key={cart_item.id}>
           <div className="checkout-item" key={cart_item.id}>
@@ -29,13 +46,10 @@ class Checkout extends Component {
           <hr />
         </div>
       )
-      this.setState({checkout_price: this.state.checkout_price + cart_item.price});
+
 
     }
   )
-
-
-
 }
 
   render(){
