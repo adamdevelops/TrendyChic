@@ -7,34 +7,41 @@ class Checkout extends Component {
     super(props);
 
     this.state = {
-      checkout_price: 0
+      checkout_price: 0,
+      prevItem: 0
     };
 
     this.renderCart = this.renderCart.bind(this);
-
+    this.componentWillMount = this.componentWillMount.bind(this);
 
   }
 
 
-  componentDidMount(){
-    return this.props.cart.map((cart_item) => {
-        let itemPrices = this.state.checkout_price;
+  componentWillMount(){
+    let final_total = this.state.checkout_price;
+
+    this.props.cart.map((cart_item) => {
         console.log('itemPrice');
+        console.log(cart_item.price);
 
-        itemPrices = itemPrices + cart_item.price;
-            console.log(itemPrices);
+        final_total += cart_item.price;
+        console.log('final_total')
+        console.log(final_total)
 
-        this.setState({checkout_price: itemPrices});
 
-      }
-    )
-  }
+    }
+  )
+
+  this.setState({checkout_price: final_total});
+
+
+
+}
 
 
 
   renderCart(){
     return this.props.cart.map((cart_item) => {
-
       return(
         <div key={cart_item.id}>
           <div className="checkout-item" key={cart_item.id}>
@@ -53,7 +60,7 @@ class Checkout extends Component {
 }
 
   render(){
-    console.log('Checkout price');
+    console.log('Final Checkout price');
     console.log(this.state.checkout_price);
     return(
       <div id="checkout-section">
