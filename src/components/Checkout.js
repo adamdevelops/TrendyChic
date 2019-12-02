@@ -8,7 +8,7 @@ class Checkout extends Component {
 
     this.state = {
       checkout_price: 0,
-      fees: 0
+      fees: 4
     };
 
     this.renderCart = this.renderCart.bind(this);
@@ -69,7 +69,7 @@ class Checkout extends Component {
           <br />
           <h5 className="checkout-total">Merchandise: <p className="fright">${this.state.checkout_price}.00</p></h5>
           <h5>Fees: <p className="fright">${this.state.fees == 0 ? '0.00' : this.state.fees + '.00'}</p></h5>
-          <h5>Final: <p className="fright">${this.state.checkout_price}.00</p></h5>
+          <h5>Final: <p className="fright">${this.state.checkout_price + this.state.fees}.00</p></h5>
           <button className="fright">Checkout</button>
         </div>
       </div>

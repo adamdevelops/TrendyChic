@@ -18,9 +18,7 @@ export const deleteCART_ITEM = item => {
     type: 'DELETE_CART_ITEM',
     payload: {
       id: item.id,
-      name: item.name,
-      price: item.price,
-      imgSrc: item.imgSrc
+
     }
   };
 };
