@@ -45,8 +45,17 @@ const appsReducer = (state = initialState, action) => {
 
     case 'DELETE_CART_ITEM':
       console.log('inside delete case');
+      console.log('inside delete case');
+      console.log(action.payload);
+      const delID = action.payload.id;
 
-      return state;
+      return {
+        ...state,
+        act: {
+          ...state.act,
+          cart: state.act.cart.filter(state => state.id !== delID)
+        }
+      };
 
     case 'EDIT_CART':
       console.log('inside edit case');

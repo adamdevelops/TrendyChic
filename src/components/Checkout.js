@@ -12,8 +12,13 @@ class Checkout extends Component {
     };
 
     this.renderCart = this.renderCart.bind(this);
+    this.deleteFromCart = this.deleteFromCart.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
 
+  }
+
+  deleteFromCart(event, item){
+    this.props.deleteCART_ITEM(item);
   }
 
 
@@ -42,7 +47,7 @@ class Checkout extends Component {
             <img className="checkout-item-pic fleft" src={cart_item.imgSrc} alt="clothing item"/>
             <p className="item-name">{cart_item.name}</p>
             <p className="item-price">${cart_item.price}</p>
-            <button className="remove_button">Remove</button>
+            <button className="remove_button" onClick={(event) => this.deleteFromCart(event, cart_item)}>Remove</button>
           </div>
           <hr />
         </div>
