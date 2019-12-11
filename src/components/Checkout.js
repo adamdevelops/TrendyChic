@@ -13,16 +13,21 @@ class Checkout extends Component {
 
     this.renderCart = this.renderCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
+    this.calculateCartTotal = this.calculateCartTotal.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
 
   }
 
   deleteFromCart(event, item){
+    this.setState({checkout_price: 0});
+    console.log('deleteFromCart checkout')
+    console.log(this.state.checkout_price)
     this.props.deleteCART_ITEM(item);
+    this.calculateCartTotal();
   }
 
+  calculateCartTotal(){
 
-  componentWillMount(){
     let final_total = this.state.checkout_price;
 
     this.props.cart.map((cart_item) => {
@@ -32,9 +37,14 @@ class Checkout extends Component {
         final_total += cart_item.price;
         console.log('final_total')
         console.log(final_total)
-    }
-  )
-  this.setState({checkout_price: final_total});
+        }
+      )
+      this.setState({checkout_price: final_total});
+  }
+
+
+  componentWillMount(){
+    this.calculateCartTotal();
 }
 
 

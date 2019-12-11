@@ -14,7 +14,7 @@ const initialState = {
         {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8.jpg"},
         {id: 7, name: "White Blossom Mary shirt", price: 13, imgSrc: "/tops/9.jpg"},
         {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg"},
-        {id: 9, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg"}
+        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10.jpg"}
       ]
 };
 
@@ -45,8 +45,6 @@ const appsReducer = (state = initialState, action) => {
 
     case 'DELETE_CART_ITEM':
       console.log('inside delete case');
-      console.log('inside delete case');
-      console.log(action.payload);
       const delID = action.payload.id;
 
       return {
