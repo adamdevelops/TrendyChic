@@ -3,31 +3,24 @@ import { connect } from 'react-redux';
 import { deleteCART_ITEM, purchaseITEMS } from '../actions';
 import PriceArea from './PriceArea';
 
-import { updateCartPrice } from '../reducers/app'
-
+import { updateCartPrice } from '../reducers/app';
 
 class Checkout extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      checkout_price: 0,
-      fees: 0,
-      products: this.props.cart.map(cart_item => ({ ...cart_item, quantity: 0 }))
+
     };
 
     this.renderCart = this.renderCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
-    this.calculateCartTotal = this.calculateCartTotal.bind(this);
     this.purchaseCartItems = this.purchaseCartItems.bind(this);
-    this.componentWillMount = this.componentWillMount.bind(this);
-    this.componentWillUnmount = this.componentWillUnmount.bind(this);
+
 
   }
 
   deleteFromCart(event, item){
-    console.log('deleteFromCart checkout')
-    console.log(this.state.checkout_price)
     this.props.deleteCART_ITEM(item);
     this.calculateCartTotal();
   }
@@ -39,41 +32,7 @@ class Checkout extends Component {
     this.props.purchaseITEMS(items);
   }
 
-
-  calculateCartTotal(){
-    console.log('products')
-    console.log(this.state.products)
-
-    let final_total = this.state.checkout_price;
-
-    this.props.cart.map((cart_item) => {
-        console.log('itemPrice');
-        console.log(cart_item.price);
-
-        final_total += cart_item.price;
-        console.log('final_total')
-        console.log(final_total)
-        }
-      )
-      this.setState({checkout_price: final_total});
-  }
-
-
-  componentWillMount(){
-
-    this.calculateCartTotal();
-  }
-
-  componentWillUnmount(){
-    console.log('Unmount')
-    this.setState({checkout_price: 0});
-
-  }
-
-
   renderCart(){
-    console.log('updateCartPrice')
-    console.log(this.props.updateCartPrice)
     return this.props.cart.map((cart_item) => {
       return(
         <div key={cart_item.id}>
@@ -86,8 +45,6 @@ class Checkout extends Component {
           <hr />
         </div>
       )
-
-
     }
   )
 }

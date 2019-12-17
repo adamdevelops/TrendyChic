@@ -75,8 +75,6 @@ const appsReducer = (state = initialState, action) => {
 
 export const updateCartPrice = (state) => {
   let final_total = 0;
-  console.log('updateCartPrice in reducer')
-  console.log(state);
 
   state.apps.act.cart.map((cart_item) => {
       console.log('itemPrice');
@@ -88,10 +86,10 @@ export const updateCartPrice = (state) => {
       }
     )
 
-  console.log('total in reducer')
+  console.log('final_total in updateCartPrice')
   console.log(final_total)
 
-  return final_total;
+  return final_total
 }
 
 export default appsReducer
