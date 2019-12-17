@@ -22,3 +22,14 @@ export const deleteCART_ITEM = item => {
     }
   };
 };
+
+// Add item to cart
+export const purchaseITEMS = items => {
+
+  return{
+    type: 'BUY_ITEMS',
+    payload: {
+      items: items
+    }
+  };
+};

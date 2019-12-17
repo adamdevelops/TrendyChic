@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
+
 import '../styles.css';
 
 class Footer extends Component {
@@ -9,8 +11,8 @@ class Footer extends Component {
         <div id="info" className="footer_item">
           <h4>Information</h4>
           <ul>
-            <li><a className="pointer">About Us</a></li>
-            <li><a className="pointer">My Account</a></li>
+            <li><Link className="pointer" to="/home">About Us</Link></li>
+            <li><Link className="pointer" to="/home">My Account</Link></li>
           </ul>
         </div>
         <div id="terms" className="footer_item">
@@ -21,7 +23,7 @@ class Footer extends Component {
           <ul>
             <li>Phone#: (800)-201-1789</li>
             <li>Email: trendychic </li>
-            <li><a className="pointer">Looking to work with us?</a></li>
+            <li><Link className="pointer" to="/home">Looking to work with us?</Link></li>
           </ul>
         </div>
       </div>

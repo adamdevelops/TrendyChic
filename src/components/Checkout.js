@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { deleteCART_ITEM } from '../actions';
+import { deleteCART_ITEM, purchaseITEMS } from '../actions';
+import PriceArea from './PriceArea';
+
+items = this.props.cart.map(cart_item => ({ ...cart_item, quantity: 0 }))
 
 class Checkout extends Component {
   constructor(props){
@@ -8,25 +11,37 @@ class Checkout extends Component {
 
     this.state = {
       checkout_price: 0,
-      fees: 4
+      fees: 0,
+      products: this.props.cart.map(cart_item => ({ ...cart_item, quantity: 0 }))
     };
 
     this.renderCart = this.renderCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
     this.calculateCartTotal = this.calculateCartTotal.bind(this);
+    this.purchaseCartItems = this.purchaseCartItems.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
+    this.componentWillUnmount = this.componentWillUnmount.bind(this);
 
   }
 
   deleteFromCart(event, item){
-    this.setState({checkout_price: 0});
     console.log('deleteFromCart checkout')
     console.log(this.state.checkout_price)
     this.props.deleteCART_ITEM(item);
     this.calculateCartTotal();
   }
 
+  purchaseCartItems(event, items){
+    console.log('inside purchaseCartItems');
+    console.log(this.props.cart)
+    console.log(items)
+    this.props.purchaseITEMS(items);
+  }
+
+
   calculateCartTotal(){
+    console.log('products')
+    console.log(this.state.products)
 
     let final_total = this.state.checkout_price;
 
@@ -45,11 +60,17 @@ class Checkout extends Component {
 
   componentWillMount(){
     this.calculateCartTotal();
-}
+  }
 
+  componentWillUnmount(){
+    console.log('Unmount')
+    this.setState({checkout_price: 0});
+
+  }
 
 
   renderCart(){
+
     return this.props.cart.map((cart_item) => {
       return(
         <div key={cart_item.id}>
@@ -80,23 +101,19 @@ class Checkout extends Component {
           </div>
         </div>
         <div className="checkout-price">
-          <h1>Price:</h1>
-          <br />
-          <h5 className="checkout-total">Merchandise: <p className="fright">${this.state.checkout_price}.00</p></h5>
-          <h5>Fees: <p className="fright">${this.state.fees == 0 ? '0.00' : this.state.fees + '.00'}</p></h5>
-          <h5>Final: <p className="fright">${this.state.checkout_price + this.state.fees}.00</p></h5>
-          <button className="fright">Checkout</button>
+          <PriceArea cartprice={this.state.checkout_price} />
         </div>
       </div>
-
     );
   }
 }
 
 const mapStateToProps = (state) => {
+  console.log('mapStateToProps')
   console.log('State in Cart')
   console.log(state.apps.act.cart)
+
   return {cart: state.apps.act.cart}
 }
 
-export default connect(mapStateToProps, {deleteCART_ITEM})(Checkout);
+export default connect(mapStateToProps, {deleteCART_ITEM, purchaseITEMS})(Checkout);

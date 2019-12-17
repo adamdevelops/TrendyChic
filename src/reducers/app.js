@@ -55,11 +55,18 @@ const appsReducer = (state = initialState, action) => {
         }
       };
 
-    case 'EDIT_CART':
-      console.log('inside edit case');
+    case 'BUY_ITEMS':
+      console.log('inside buy items case');
+      console.log(action.payload);
 
       // Otherwise, this is the one we want - return an updated value
-      return state;
+      return {
+        ...state,
+        act: {
+          ...state.act,
+          history: state.act.history.concat(action.payload)
+        }
+      };
 
     default:
       return state;

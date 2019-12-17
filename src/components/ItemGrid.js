@@ -63,7 +63,7 @@ class ItemGrid extends Component {
             <h5>Size:</h5>
             <ul>
               <li className="">
-                <a>
+                <a href="/item">
                   <label className="container">XS
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -71,7 +71,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a>
+                <a href="/item">
                   <label className="container">S
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -79,7 +79,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a>
+                <a href="/item">
                   <label className="container">M
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -87,7 +87,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a>
+                <a href="/item">
                   <label className="container">L
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -95,7 +95,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a>
+                <a href="/item">
                   <label className="container">XL
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -103,7 +103,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a>
+                <a href="/item">
                   <label className="container">XXL
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -116,52 +116,52 @@ class ItemGrid extends Component {
             <h5>Color:</h5>
             <ul className="color-list">
               <li className="swatch color-swatch-black pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-blue pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-red pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>   <br />
               <li className="swatch color-swatch-nude pointer">
-                  <a>  </a>
+                  <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-white pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-grey pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>   <br />
               <li className="swatch color-swatch-purple pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-brown pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-yellow pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>  <br />
               <li className="swatch color-swatch-orange pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-pink pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>
               <li className="swatch color-swatch-green pointer">
-                <a>  </a>
+                <a href="/item">  </a>
               </li>  <br />
             </ul>
           </div>
           <div className="price-range">
             <h5 className="">Price:</h5>
             <ul className="prices">
-              <li><a className="pointer">$10</a></li>
-              <li><a className="pointer">$20</a></li>
-              <li><a className="pointer">$30</a></li>
-              <li><a className="pointer">$40</a></li>
-              <li><a className="pointer">$50</a></li>
-              <li><a className="pointer">$100</a></li>
+              <li><a href="/item" className="pointer">$10</a></li>
+              <li><a href="/item" className="pointer">$20</a></li>
+              <li><a href="/item" className="pointer">$30</a></li>
+              <li><a href="/item" className="pointer">$40</a></li>
+              <li><a href="/item" className="pointer">$50</a></li>
+              <li><a href="/item" className="pointer">$100</a></li>
             </ul>
           </div>
         </div>
