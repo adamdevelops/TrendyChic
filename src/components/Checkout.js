@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { deleteCART_ITEM, purchaseITEMS } from '../actions';
 import PriceArea from './PriceArea';
 
-items = this.props.cart.map(cart_item => ({ ...cart_item, quantity: 0 }))
+import { updateCartPrice } from '../reducers/app'
+
 
 class Checkout extends Component {
   constructor(props){
@@ -59,6 +60,7 @@ class Checkout extends Component {
 
 
   componentWillMount(){
+
     this.calculateCartTotal();
   }
 
@@ -70,7 +72,8 @@ class Checkout extends Component {
 
 
   renderCart(){
-
+    console.log('updateCartPrice')
+    console.log(this.props.updateCartPrice)
     return this.props.cart.map((cart_item) => {
       return(
         <div key={cart_item.id}>
@@ -101,7 +104,7 @@ class Checkout extends Component {
           </div>
         </div>
         <div className="checkout-price">
-          <PriceArea cartprice={this.state.checkout_price} />
+          <PriceArea cartprice={this.props.updateCartPrice} />
         </div>
       </div>
     );
@@ -113,7 +116,7 @@ const mapStateToProps = (state) => {
   console.log('State in Cart')
   console.log(state.apps.act.cart)
 
-  return {cart: state.apps.act.cart}
+  return {cart: state.apps.act.cart, updateCartPrice: updateCartPrice(state)}
 }
 
 export default connect(mapStateToProps, {deleteCART_ITEM, purchaseITEMS})(Checkout);

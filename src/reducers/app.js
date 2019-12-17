@@ -70,9 +70,28 @@ const appsReducer = (state = initialState, action) => {
 
     default:
       return state;
-
   }
 }
 
+export const updateCartPrice = (state) => {
+  let final_total = 0;
+  console.log('updateCartPrice in reducer')
+  console.log(state);
+
+  state.apps.act.cart.map((cart_item) => {
+      console.log('itemPrice');
+      console.log(cart_item.price);
+
+      final_total += cart_item.price;
+      console.log('final_total')
+      console.log(final_total)
+      }
+    )
+
+  console.log('total in reducer')
+  console.log(final_total)
+
+  return final_total;
+}
 
 export default appsReducer
