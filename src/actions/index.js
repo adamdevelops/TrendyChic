@@ -33,3 +33,17 @@ export const purchaseITEMS = items => {
     }
   };
 };
+
+// Add item to cart
+export const addFAVORITE = item => {
+
+  return{
+    type: 'ADD_FAVORITE',
+    payload: {
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      imgSrc: item.imgSrc
+    }
+  };
+};

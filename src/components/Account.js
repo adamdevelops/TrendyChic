@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 
 
@@ -10,7 +11,28 @@ class Account extends Component {
 
     };
 
+    this.renderFavorites = this.renderFavorites.bind(this);
+
   }
+
+  renderFavorites(){
+    console.log('renderFavorites')
+    console.log(this.props.favorites)
+    return this.props.favorites.map((favorites_item) => {
+      return(
+        <div key={favorites_item.id}>
+          <div className="checkout-item">
+            <img className="fav-item-pic fleft" src="/tops/8.jpg" alt="clothing item"/>
+            <p className="item-name">{this.props.favorites_item.name}</p>
+            <p className="item-price">${this.props.favorites_item.price}</p>
+            <button className="remove_button">Remove</button>
+          </div>
+          <hr />
+        </div>
+      )
+    }
+  )
+}
 
   render(){
     return(
@@ -26,23 +48,19 @@ class Account extends Component {
         </div>
         <div className="favorites">
           <h1>Favorites</h1>
-            <div className="checkout-item">
-              <img className="fav-item-pic fleft" src="/tops/8.jpg" alt="clothing item"/>
-              <p className="item-name">White Dress with Black Design</p>
-              <p className="item-price">$15</p>
-              <button className="remove_button">Remove</button>
-            </div>
-            <hr />
-              <div className="checkout-item">
-                <img className="fav-item-pic fleft" src="/tops/3.jpg" alt="clothing item"/>
-                <p className="item-name">White Dress with Black Design</p>
-                <p className="item-price">$15</p>
-                <button className="remove_button">Remove</button>
-              </div>
+            {this.renderFavorites()}
         </div>
       </div>
     );
   }
 }
 
-export default Account;
+const mapStateToProps = (state) => {
+  console.log('mapStateToProps')
+  console.log('State in Cart')
+  console.log(state.apps.act.favorites)
+
+  return {favorites: state.apps.act.favorites}
+}
+
+export default connect(mapStateToProps)(Account);

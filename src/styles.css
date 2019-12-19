@@ -301,6 +301,12 @@
   width: 300px;
 }
 
+.fav-icon{
+  position: relative;
+  float: right;
+  padding-top: 10px;
+}
+
 .item-name{
   padding-left: 20px;
 }

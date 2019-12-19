@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addITEM } from '../actions';
+import { addITEM, addFAVORITE } from '../actions';
 // import Slider from 'react-rangeslider'
 import '../styles.css';
 // import 'react-rangeslider/lib/index.css'
@@ -12,11 +12,16 @@ class ItemGrid extends Component {
 
 
     this.openSearchBar = this.openSearchBar.bind(this);
+    this.addFavorite = this.addFavorite.bind(this);
     this.addToCart = this.addToCart.bind(this);
   }
 
   openSearchBar() {
     this.setState({showSearchBar: !this.state.showSearchBar});
+  }
+
+  addFavorite = (event, item) => {
+    this.props.addFAVORITE(item);
   }
 
   addToCart = (event, item) => {
@@ -42,6 +47,7 @@ class ItemGrid extends Component {
       return(
         <div className="item-product" key={item.id}>
           <img className="item" src={item.imgSrc} alt="clothing item" />
+          <i class="fa fa-heart fav-icon pointer" aria-hidden="true" onClick={(event) => this.addFavorite(event, item)}></i>
           <p className="item-name">{item.name}</p>
           <p className="item-price">${item.price}</p> <button className="addtoCart_btn" onClick={(event) => this.addToCart(event, item)}>Add</button>
         </div>
@@ -180,4 +186,4 @@ const mapStateToProps = (state) => {
   return {clothing: state.apps.clothing}
 }
 
-export default connect(mapStateToProps, {addITEM})(ItemGrid);
+export default connect(mapStateToProps, {addITEM, addFAVORITE})(ItemGrid);

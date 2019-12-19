@@ -68,6 +68,22 @@ const appsReducer = (state = initialState, action) => {
         }
       };
 
+      case 'ADD_FAVORITE':
+        console.log('inside add favorite case');
+
+        console.log('Action:');
+        console.log(action.payload);
+        console.log('State:');
+        console.log(state);
+
+        return {
+          ...state,
+          act: {
+            ...state.act,
+            favorites: state.act.favorites.concat(action.payload)
+          }
+        };
+
     default:
       return state;
   }
