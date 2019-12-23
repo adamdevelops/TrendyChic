@@ -47,3 +47,14 @@ export const addFAVORITE = item => {
     }
   };
 };
+
+export const deleteFAVORITE = item => {
+
+  return{
+    type: 'DELETE_FAVORITE',
+    payload: {
+      id: item.id,
+
+    }
+  };
+};

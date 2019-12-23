@@ -84,6 +84,18 @@ const appsReducer = (state = initialState, action) => {
           }
         };
 
+        case 'DELETE_FAVORITE':
+          console.log('inside delete case');
+          const delFavID = action.payload.id;
+
+          return {
+            ...state,
+            act: {
+              ...state.act,
+              favorites: state.act.favorites.filter(state => state.id !== delFavID)
+            }
+          };
+
     default:
       return state;
   }
