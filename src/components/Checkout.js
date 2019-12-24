@@ -15,22 +15,13 @@ class Checkout extends Component {
 
     this.renderCart = this.renderCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
-    this.purchaseCartItems = this.purchaseCartItems.bind(this);
-
 
   }
 
   deleteFromCart(event, item){
     this.props.deleteCART_ITEM(item);
-    this.calculateCartTotal();
   }
 
-  purchaseCartItems(event, items){
-    console.log('inside purchaseCartItems');
-    console.log(this.props.cart)
-    console.log(items)
-    this.props.purchaseITEMS(items);
-  }
 
   renderCart(){
     return this.props.cart.map((cart_item) => {
@@ -61,7 +52,7 @@ class Checkout extends Component {
           </div>
         </div>
         <div className="checkout-price">
-          <PriceArea cartprice={this.props.updateCartPrice} />
+          <PriceArea cartprice={this.props.updateCartPrice} cartitems={this.props.cart} />
         </div>
       </div>
     );

@@ -23,7 +23,7 @@ export const deleteCART_ITEM = item => {
   };
 };
 
-// Add item to cart
+// Add items to history
 export const purchaseITEMS = items => {
 
   return{
@@ -34,7 +34,7 @@ export const purchaseITEMS = items => {
   };
 };
 
-// Add item to cart
+// Add item to favorite
 export const addFAVORITE = item => {
 
   return{

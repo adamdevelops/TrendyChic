@@ -8,13 +8,8 @@ class Account extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-
-    };
-
     this.renderFavorites = this.renderFavorites.bind(this);
     this.deleteFavorite = this.deleteFavorite.bind(this);
-
   }
 
   deleteFavorite(event, item){
