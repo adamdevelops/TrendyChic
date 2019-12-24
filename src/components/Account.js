@@ -20,7 +20,7 @@ class Account extends Component {
   renderHistory(){
     return this.props.history.map((order_history) => {
       return (
-      <div>
+      <div key={order_history.id}>
         {order_history.items.map((item) => {
               return(
                 <div className="checkout-item" key={item.id}>
