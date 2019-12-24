@@ -8,12 +8,36 @@ class Account extends Component {
   constructor(props){
     super(props);
 
+    this.renderHistory = this.renderHistory.bind(this);
     this.renderFavorites = this.renderFavorites.bind(this);
     this.deleteFavorite = this.deleteFavorite.bind(this);
   }
 
   deleteFavorite(event, item){
     this.props.deleteFAVORITE(item)
+  }
+
+  renderHistory(){
+    return this.props.history.map((order_history) => {
+      return (
+      <div>
+        {order_history.items.map((item) => {
+              return(
+                <div className="checkout-item" key={item.id}>
+                  <img className="checkout-item-pic fleft" src={item.imgSrc} alt="clothing item"/>
+                  <p className="item-name">{item.name}</p>
+                  <p className="item-price">${item.price}</p>
+                </div>
+                )
+          })
+        }
+        <hr />
+      </div>
+    )
+
+
+    })
+
   }
 
   renderFavorites(){
@@ -40,12 +64,7 @@ class Account extends Component {
       <div id="account-section">
         <div className="recent-orders">
           <h1>Recent Orders</h1>
-            <div className="checkout-item">
-              <img className="checkout-item-pic fleft" src="/tops/7.jpg" alt="clothing item"/>
-              <p className="item-name">White Dress with Black Design</p>
-              <p className="item-price">$15</p>
-              <button className="remove_button">Remove</button>
-            </div>
+            {this.renderHistory()}
         </div>
         <div className="favorites">
           <h1>Favorites</h1>
@@ -60,8 +79,10 @@ const mapStateToProps = (state) => {
   console.log('mapStateToProps')
   console.log('State in Favorites')
   console.log(state.apps.act.favorites)
+  console.log('State in History')
+  console.log(state.apps.act.history)
 
-  return {favorites: state.apps.act.favorites}
+  return {favorites: state.apps.act.favorites, history: state.apps.act.history}
 }
 
 export default connect(mapStateToProps, {deleteFAVORITE})(Account);

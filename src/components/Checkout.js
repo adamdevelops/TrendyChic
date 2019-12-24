@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { deleteCART_ITEM, purchaseITEMS } from '../actions';
+import { deleteCART_ITEM } from '../actions';
 import PriceArea from './PriceArea';
 
 import { updateCartPrice } from '../reducers/app';
@@ -15,6 +15,7 @@ class Checkout extends Component {
 
     this.renderCart = this.renderCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
+
 
   }
 
@@ -67,4 +68,4 @@ const mapStateToProps = (state) => {
   return {cart: state.apps.act.cart, updateCartPrice: updateCartPrice(state)}
 }
 
-export default connect(mapStateToProps, {deleteCART_ITEM, purchaseITEMS})(Checkout);
+export default connect(mapStateToProps, {deleteCART_ITEM})(Checkout);

@@ -58,9 +58,9 @@ const appsReducer = (state = initialState, action) => {
     case 'BUY_ITEMS':
       console.log('inside buy items case');
       console.log(action.payload);
-
       const emptyArray = [];
 
+      // Otherwise, this is the one we want - return an updated value
       return {
         ...state,
         act: {
@@ -68,7 +68,7 @@ const appsReducer = (state = initialState, action) => {
           history: state.act.history.concat(action.payload),
           cart: state.act.history.concat(emptyArray)
         }
-      }
+      };
 
       case 'ADD_FAVORITE':
         console.log('inside add favorite case');
@@ -102,16 +102,6 @@ const appsReducer = (state = initialState, action) => {
       return state;
   }
 }
-
-// function copyCartToHistory(state) {
-//   return {
-//     ...state,
-//     act: {
-//       ...state.act,
-//       history: state.act.history.concat(action.payload)
-//     }
-//   }
-// }
 
 export const updateCartPrice = (state) => {
   let final_total = 0;
