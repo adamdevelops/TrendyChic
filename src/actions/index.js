@@ -23,7 +23,7 @@ export const deleteCART_ITEM = item => {
   };
 };
 
-let orderid = 1;
+let order_id = 1;
 
 // Add items to history
 export const purchaseITEMS = items => {
@@ -31,7 +31,7 @@ export const purchaseITEMS = items => {
   return{
     type: 'BUY_ITEMS',
     payload: {
-      id: orderid++,
+      id: order_id++,
       items: items
     }
   };

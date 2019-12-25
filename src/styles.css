@@ -334,7 +334,11 @@
   width: 40%;
   margin: 30px 30px;
   display: inline-block;
+}
 
+.act-item-pic{
+  width: 100px;
+  height: 100px;
 }
 
 .favorites{
@@ -343,12 +347,6 @@
   display: inline-block;
   vertical-align: top;
 }
-
-.fav-item-pic{
-  width: 100px;
-  height: 100px;
-}
-
 
 #footer{
   text-align: center;
