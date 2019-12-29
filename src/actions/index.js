@@ -26,13 +26,14 @@ export const deleteCART_ITEM = item => {
 let order_id = 1;
 
 // Add items to history
-export const purchaseITEMS = items => {
+export const purchaseITEMS = (items, date) => {
 
   return{
     type: 'BUY_ITEMS',
     payload: {
       id: order_id++,
-      items: items
+      items: items,
+      date: date
     }
   };
 };

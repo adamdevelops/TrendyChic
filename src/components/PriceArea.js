@@ -14,9 +14,12 @@ class PriceArea extends Component {
   }
 
   purchaseCartItems(event, items){
+    let date = new Date();
+    const dateString = date.toLocaleDateString("en-US")
+
     console.log('inside purchaseCartItems');
     console.log(items)
-    this.props.purchaseITEMS(items);
+    this.props.purchaseITEMS(items, dateString);
   }
 
   render(){
