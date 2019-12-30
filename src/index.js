@@ -8,6 +8,7 @@ import App from './components/App'
 
 import trendychicApp from './reducers'
 import { loadState, saveState } from './localStorage.js'
+import throttle from 'lodash/throttle'
 
 const persistedState = loadState();
 const store = createStore(
@@ -15,11 +16,11 @@ const store = createStore(
   persistedState
 );
 
-store.subscribe(() => {
+store.subscribe(throttle(() => {
   saveState({
     apps: store.getState().apps
   });
-});
+}, 1000));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,3 +1,5 @@
+import v4 from 'node-uuid';
+
 // Add item to cart
 export const addITEM = item => {
 
@@ -31,7 +33,7 @@ export const purchaseITEMS = (items, date) => {
   return{
     type: 'BUY_ITEMS',
     payload: {
-      id: order_id++,
+      id: v4(),
       items: items,
       date: date
     }
