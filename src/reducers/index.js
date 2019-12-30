@@ -2,6 +2,8 @@ import {combineReducers} from 'redux';
 import appsReducer from './app.js';
 
 
-export default combineReducers({
+const trendychicApp = combineReducers({
   apps: appsReducer,
 })
+
+export default trendychicApp;
