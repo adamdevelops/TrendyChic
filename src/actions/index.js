@@ -25,7 +25,7 @@ export const deleteCART_ITEM = item => {
   };
 };
 
-let order_id = 1;
+// let order_id = 1;
 
 // Add items to history
 export const purchaseITEMS = (items, date) => {
@@ -61,6 +61,15 @@ export const deleteFAVORITE = item => {
     payload: {
       id: item.id,
 
+    }
+  };
+};
+
+export const filterSIZE = size => {
+  return{
+    type: 'FILTER_SIZE',
+    payload: {
+      size_id: size.id,
     }
   };
 };

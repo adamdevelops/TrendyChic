@@ -7,9 +7,8 @@ import '../styles.css';
 
 
 class ItemGrid extends Component {
-  constructor(props, context){
-    super(props, context);
-
+  constructor(props){
+    super(props);
 
     this.openSearchBar = this.openSearchBar.bind(this);
     this.addFavorite = this.addFavorite.bind(this);
@@ -183,7 +182,11 @@ const mapStateToProps = (state) => {
   console.log('State in ItemGrid')
   console.log(state)
   console.log(state.apps.clothing)
-  return {clothing: state.apps.clothing}
+  console.log(state.apps.displayed_clothing)
+  if (state.apps.displayed_clothing === undefined | state.apps.displayed_clothing.length == 0){
+    return {clothing: state.apps.clothing}
+  };
+  return{clothing: state.apps.displayed_clothing}
 }
 
 export default connect(mapStateToProps, {addITEM, addFAVORITE})(ItemGrid);

@@ -15,7 +15,8 @@ const initialState = {
         {id: 7, name: "White Blossom Mary shirt", price: 13, imgSrc: "/tops/9.jpg"},
         {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg"},
         {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10.jpg"}
-      ]
+      ],
+      displayed_clothing: [],
 };
 
 const appsReducer = (state = initialState, action) => {
@@ -97,6 +98,8 @@ const appsReducer = (state = initialState, action) => {
               favorites: state.act.favorites.filter(state => state.id !== delFavID)
             }
           };
+
+
 
     default:
       return state;
