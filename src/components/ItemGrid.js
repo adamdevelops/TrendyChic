@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addITEM, addFAVORITE } from '../actions';
+import { addITEM, addFAVORITE, filterSIZE } from '../actions';
 // import Slider from 'react-rangeslider'
 import '../styles.css';
 // import 'react-rangeslider/lib/index.css'
@@ -13,6 +13,8 @@ class ItemGrid extends Component {
     this.openSearchBar = this.openSearchBar.bind(this);
     this.addFavorite = this.addFavorite.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.filterSize = this.filterSize.bind(this);
+
   }
 
   openSearchBar() {
@@ -25,6 +27,10 @@ class ItemGrid extends Component {
 
   addToCart = (event, item) => {
     this.props.addITEM(item);
+  }
+
+  filterSize = (event, size) => {
+    this.props.filterSIZE(size);
   }
 
   handleChangeStart = () => {
@@ -68,7 +74,7 @@ class ItemGrid extends Component {
             <h5>Size:</h5>
             <ul>
               <li className="">
-                <a href="/item">
+                <a href="/item" onClick={(event) => this.filterSize(event, item)}>
                   <label className="container">XS
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -189,4 +195,4 @@ const mapStateToProps = (state) => {
   return{clothing: state.apps.displayed_clothing}
 }
 
-export default connect(mapStateToProps, {addITEM, addFAVORITE})(ItemGrid);
+export default connect(mapStateToProps, {addITEM, addFAVORITE, filterSIZE})(ItemGrid);

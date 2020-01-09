@@ -69,7 +69,7 @@ export const filterSIZE = size => {
   return{
     type: 'FILTER_SIZE',
     payload: {
-      size_id: size.id,
+      id: size,
     }
   };
 };
