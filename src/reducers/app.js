@@ -104,7 +104,15 @@ const appsReducer = (state = initialState, action) => {
             const sizeID = action.payload.id;
             let filtered_clothes = [];
 
-            filtered_clothes = state.clothing.filter(item => item.size == sizeID);
+            console.log('checked_status');
+            console.log(action.payload.checked_status);
+
+            // When checkbox is unchecked
+            if (action.payload.checked_status === true){
+               console.log('if statement')
+               filtered_clothes = state.clothing.filter(item => item.size === sizeID);
+               console.log(filtered_clothes);
+             }
 
             console.log('filtered_clothes')
             console.log(filtered_clothes);

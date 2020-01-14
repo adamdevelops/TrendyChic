@@ -15,8 +15,6 @@ class Checkout extends Component {
 
     this.renderCart = this.renderCart.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
-
-
   }
 
   deleteFromCart(event, item){

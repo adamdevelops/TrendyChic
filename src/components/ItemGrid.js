@@ -10,6 +10,10 @@ class ItemGrid extends Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      checked: false
+    }
+
     this.openSearchBar = this.openSearchBar.bind(this);
     this.addFavorite = this.addFavorite.bind(this);
     this.addToCart = this.addToCart.bind(this);
@@ -29,8 +33,14 @@ class ItemGrid extends Component {
     this.props.addITEM(item);
   }
 
-  filterSize = (event, size) => {
-    this.props.filterSIZE(size);
+  filterSize = (event, size, checked_status) => {
+    checked_status = !checked_status;
+    console.log('filterSize');
+    this.setState({checked: checked_status});
+    event.preventDefault();
+
+    console.log(checked_status)
+    this.props.filterSIZE(size, checked_status);
   }
 
   handleChangeStart = () => {
@@ -74,7 +84,7 @@ class ItemGrid extends Component {
             <h5>Size:</h5>
             <ul>
               <li className="">
-                <a href="/item" onClick={(event) => this.filterSize(event, item)}>
+                <a href="/item" onClick={(event) => this.filterSize(event, 1, this.state.checked)}>
                   <label className="container">XS
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -189,7 +199,7 @@ const mapStateToProps = (state) => {
   console.log(state)
   console.log(state.apps.clothing)
   console.log(state.apps.displayed_clothing)
-  if (state.apps.displayed_clothing === undefined | state.apps.displayed_clothing.length == 0){
+  if (state.apps.displayed_clothing === undefined | state.apps.displayed_clothing.length === 0){
     return {clothing: state.apps.clothing}
   };
   return{clothing: state.apps.displayed_clothing}
