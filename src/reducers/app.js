@@ -7,13 +7,13 @@ const initialState = {
       },
       clothing: [  // XS: 1
         {id: 1, name: "Light Blue Dress", price: 20, imgSrc: "/tops/1.jpg", size: [1,3]},
-        {id: 2, name: "Nude Dress with Blue Floral Design", price: 20, imgSrc: "/tops/4.jpg"},
+        {id: 2, name: "Nude Dress with Blue Floral Design", price: 20, imgSrc: "/tops/4.jpg", size: 2},
         {id: 3, name: "White Dress with Gold Design", price: 15, imgSrc: "/tops/5.jpg"},
         {id: 4, name: "Brown Button Shirt", price: 15, imgSrc: "/tops/6.jpg", size: 1},
         {id: 5, name: "Yellow Dress", price: 27, imgSrc: "/tops/7.jpg"},
         {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8.jpg"},
         {id: 7, name: "White Blossom Mary shirt", price: 13, imgSrc: "/tops/9.jpg", size: 1},
-        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg"},
+        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg", size: 2},
         {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10.jpg"}
       ],
       displayed_clothing: [],

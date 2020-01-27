@@ -39,10 +39,9 @@ class ItemGrid extends Component {
     console.log('filterSize in ItemGrid')
     checked_status = !checked_status; // change status to checked for check box
 
-    this.setState({
-      ...this.state.checked,
-      Object.assign([...this.state.checked], { [size-1]: checked_status })
-    });
+    let checked = [...this.state.checked];
+    checked[size-1] = checked_status;
+    this.setState({checked});
 
     console.log(this.state.checked)
 
@@ -101,7 +100,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a href="/item" onClick={(event) => this.filterSize(event, 2, this.state.checked_1)}>
+                <a href="/item" onClick={(event) => this.filterSize(event, 2, this.state.checked[1])}>
                   <label className="container">S
                     <input type="checkbox" />
                     <span className="checkmark"></span>
