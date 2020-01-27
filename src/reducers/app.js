@@ -5,8 +5,8 @@ const initialState = {
         history: [],
         favorites: []
       },
-      clothing: [ // XS: 1
-        {id: 1, name: "Light Blue Dress", price: 20, imgSrc: "/tops/1.jpg", size: 1},
+      clothing: [  // XS: 1
+        {id: 1, name: "Light Blue Dress", price: 20, imgSrc: "/tops/1.jpg", size: [1,3]},
         {id: 2, name: "Nude Dress with Blue Floral Design", price: 20, imgSrc: "/tops/4.jpg"},
         {id: 3, name: "White Dress with Gold Design", price: 15, imgSrc: "/tops/5.jpg"},
         {id: 4, name: "Brown Button Shirt", price: 15, imgSrc: "/tops/6.jpg", size: 1},
@@ -104,15 +104,12 @@ const appsReducer = (state = initialState, action) => {
             const sizeID = action.payload.id;
             let filtered_clothes = [];
 
-            console.log('checked_status');
-            console.log(action.payload.checked_status);
-
             // When checkbox is unchecked
             if (action.payload.checked_status === true){
-               console.log('if statement')
+               console.log('if statement');
                filtered_clothes = state.clothing.filter(item => item.size === sizeID);
                console.log(filtered_clothes);
-             }
+            }
 
             console.log('filtered_clothes')
             console.log(filtered_clothes);
@@ -123,7 +120,47 @@ const appsReducer = (state = initialState, action) => {
               displayed_clothing: filtered_clothes
             };
 
+          case 'FILTER_COLOR':
+            console.log('inside filter color case');
+            const colorID = action.payload.id;
+            let filtered_color_clothes = [];
 
+            // When checkbox is unchecked
+            if (action.payload.checked_status === true){
+               console.log('if statement');
+               filtered_color_clothes = state.clothing.filter(item => item.size === sizeID);
+               console.log(filtered_color_clothes);
+            }
+
+            console.log('filtered_clothes')
+            console.log(filtered_color_clothes);
+
+
+            return {
+              ...state,
+              displayed_clothing: filtered_color_clothes
+            };
+
+            case 'FILTER_PRICE':
+              console.log('inside filter size case');
+              const priceID = action.payload.id;
+              let filtered_price_clothes = [];
+
+              // When checkbox is unchecked
+              if (action.payload.checked_status === true){
+                 console.log('if statement');
+                 filtered_price_clothes = state.clothing.filter(item => item.size === sizeID);
+                 console.log(filtered_price_clothes);
+              }
+
+              console.log('filtered_clothes')
+              console.log(filtered_price_clothes);
+
+
+              return {
+                ...state,
+                displayed_clothing: filtered_price_clothes
+              };
 
 
     default:

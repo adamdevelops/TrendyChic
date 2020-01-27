@@ -11,7 +11,9 @@ class ItemGrid extends Component {
     super(props);
 
     this.state = {
-      checked: false
+      checked: [false, false, false, false, false, false],
+
+      checked_color: false
     }
 
     this.openSearchBar = this.openSearchBar.bind(this);
@@ -34,9 +36,16 @@ class ItemGrid extends Component {
   }
 
   filterSize = (event, size, checked_status) => {
-    checked_status = !checked_status;
-    console.log('filterSize');
-    this.setState({checked: checked_status});
+    console.log('filterSize in ItemGrid')
+    checked_status = !checked_status; // change status to checked for check box
+
+    this.setState({
+      ...this.state.checked,
+      Object.assign([...this.state.checked], { [size-1]: checked_status })
+    });
+
+    console.log(this.state.checked)
+
     event.preventDefault();
 
     console.log(checked_status)
@@ -84,7 +93,7 @@ class ItemGrid extends Component {
             <h5>Size:</h5>
             <ul>
               <li className="">
-                <a href="/item" onClick={(event) => this.filterSize(event, 1, this.state.checked)}>
+                <a href="/item" onClick={(event) => this.filterSize(event, 1, this.state.checked[0])}>
                   <label className="container">XS
                     <input type="checkbox" />
                     <span className="checkmark"></span>
@@ -92,7 +101,7 @@ class ItemGrid extends Component {
                 </a>
               </li>
               <li className="">
-                <a href="/item">
+                <a href="/item" onClick={(event) => this.filterSize(event, 2, this.state.checked_1)}>
                   <label className="container">S
                     <input type="checkbox" />
                     <span className="checkmark"></span>

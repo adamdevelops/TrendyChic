@@ -74,3 +74,23 @@ export const filterSIZE = (size, checked_status) => {
     }
   };
 };
+
+export const filterCOLOR = (color, checked_status) => {
+  return{
+    type: 'FILTER_COLOR',
+    payload: {
+      id: color,
+      checked_status: checked_status
+    }
+  };
+};
+
+export const filterPRICE = (price, checked_status) => {
+  return{
+    type: 'FILTER_PRICE',
+    payload: {
+      id: price,
+      checked_status: checked_status
+    }
+  };
+};
