@@ -51,6 +51,7 @@ class ItemGrid extends Component {
   }
 
 
+
   handleChangeStart = () => {
     console.log('Change event started')
   };
@@ -119,6 +120,11 @@ class ItemGrid extends Component {
               <li className="">
                 <a href="/item" onClick={(event) => this.filterSize(event, 6, this.state.checked[5])}>
                   <label className="container">XXL </label>
+                </a>
+              </li>
+              <li className="">
+                <a href="/item" onClick={(event) => this.filterSize(event, 8, this.state.checked[8])}>
+                  Clear
                 </a>
               </li>
             </ul>
