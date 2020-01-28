@@ -36,20 +36,20 @@ class ItemGrid extends Component {
   }
 
   filterSize = (event, size, checked_status) => {
-    console.log('filterSize in ItemGrid')
-    checked_status = !checked_status; // change status to checked for check box
+    checked_status = !checked_status;
+    console.log('filterSize');
 
-    let checked = [...this.state.checked];
+    let checked = [...this.state.checked]
     checked[size-1] = checked_status;
     this.setState({checked});
 
-    console.log(this.state.checked)
 
     event.preventDefault();
 
     console.log(checked_status)
     this.props.filterSIZE(size, checked_status);
   }
+
 
   handleChangeStart = () => {
     console.log('Change event started')
@@ -93,50 +93,32 @@ class ItemGrid extends Component {
             <ul>
               <li className="">
                 <a href="/item" onClick={(event) => this.filterSize(event, 1, this.state.checked[0])}>
-                  <label className="container">XS
-                    <input type="checkbox" />
-                    <span className="checkmark"></span>
-                  </label>
+                  <label className="container">XS </label>
                 </a>
               </li>
               <li className="">
                 <a href="/item" onClick={(event) => this.filterSize(event, 2, this.state.checked[1])}>
-                  <label className="container">S
-                    <input type="checkbox" />
-                    <span className="checkmark"></span>
-                  </label>
+                  <label className="container">S </label>
                 </a>
               </li>
               <li className="">
-                <a href="/item">
-                  <label className="container">M
-                    <input type="checkbox" />
-                    <span className="checkmark"></span>
-                  </label>
+                <a href="/item" onClick={(event) => this.filterSize(event, 3, this.state.checked[2])}>
+                  <label className="container">M </label>
                 </a>
               </li>
               <li className="">
-                <a href="/item">
-                  <label className="container">L
-                    <input type="checkbox" />
-                    <span className="checkmark"></span>
-                  </label>
+                <a href="/item" onClick={(event) => this.filterSize(event, 4, this.state.checked[3])}>
+                  <label className="container">L </label>
                 </a>
               </li>
               <li className="">
-                <a href="/item">
-                  <label className="container">XL
-                    <input type="checkbox" />
-                    <span className="checkmark"></span>
-                  </label>
+                <a href="/item" onClick={(event) => this.filterSize(event, 5, this.state.checked[4])}>
+                  <label className="container">XL </label>
                 </a>
               </li>
               <li className="">
-                <a href="/item">
-                  <label className="container">XXL
-                    <input type="checkbox" />
-                    <span className="checkmark"></span>
-                  </label>
+                <a href="/item" onClick={(event) => this.filterSize(event, 6, this.state.checked[5])}>
+                  <label className="container">XXL </label>
                 </a>
               </li>
             </ul>
