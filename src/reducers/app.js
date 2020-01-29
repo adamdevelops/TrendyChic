@@ -11,10 +11,10 @@ const initialState = {
         {id: 3, name: "White Dress with Gold Design", price: 15, imgSrc: "/tops/5.jpg", size: 3},
         {id: 4, name: "Brown Button Shirt", price: 15, imgSrc: "/tops/6.jpg", size: 1},
         {id: 5, name: "Yellow Dress", price: 27, imgSrc: "/tops/7.jpg", size: 4},
-        {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8.jpg", size: 3},
+        {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8.jpg", size: [2,3]},
         {id: 7, name: "White Blossom Mary shirt", price: 13, imgSrc: "/tops/9.jpg", size: 1},
-        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg", size: 2},
-        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10.jpg"}
+        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg", size: [2,4]},
+        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10.jpg", size: [1,4]}
       ],
       displayed_clothing: [],
 };
@@ -106,8 +106,19 @@ const appsReducer = (state = initialState, action) => {
 
             // When checkbox is unchecked
             if (action.payload.checked_status === true){
+               let result = []
                console.log('if statement');
-               filtered_clothes = state.clothing.filter(item => item.size === sizeID);
+               filtered_clothes = state.clothing.filter(item => {
+                 if (item.size instanceof Array){
+                   console.log('if')
+                   for (var i=0; i < item.size.length; i++){
+                       return item.size[i] === sizeID
+                     }
+                   }
+                   console.log('else')
+                   return item.size === sizeID;
+               });
+
                console.log(filtered_clothes);
             }
 
@@ -125,16 +136,19 @@ const appsReducer = (state = initialState, action) => {
             const colorID = action.payload.id;
             let filtered_color_clothes = [];
 
-            // When checkbox is unchecked
-            if (action.payload.checked_status === true){
-               console.log('if statement');
-               filtered_color_clothes = state.clothing.filter(item => item.size === sizeID);
-               console.log(filtered_color_clothes);
-            }
+            filtered_color_clothes = state.clothing.filter(item => {
+              if (item.color instanceof Array){
+                console.log('if')
+                for (var i=0; i < item.color.length; i++){
+                    return item.size[i] === sizeID
+                  }
+                }
+                console.log('else')
+                return item.color === sizeID; 
+            });
 
-            console.log('filtered_clothes')
+            console.log('filtered_color_clothes')
             console.log(filtered_color_clothes);
-
 
             return {
               ...state,

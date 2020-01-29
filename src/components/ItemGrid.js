@@ -13,7 +13,7 @@ class ItemGrid extends Component {
     this.state = {
       checked: [false, false, false, false, false, false],
 
-      checked_color: false
+      checked_color: [false, false, false, false, false, false, false, false, false, false, false]
     }
 
     this.openSearchBar = this.openSearchBar.bind(this);
@@ -43,11 +43,26 @@ class ItemGrid extends Component {
     checked[size-1] = checked_status;
     this.setState({checked});
 
-
     event.preventDefault();
 
     console.log(checked_status)
     this.props.filterSIZE(size, checked_status);
+  }
+
+  filterColor = (event, color) => {
+    console.log('filterColor');
+
+    event.preventDefault();
+
+    this.props.filterCOLOR(color);
+  }
+
+  filterPrice = (event, price) => {
+    console.log('filterPrice');
+
+    event.preventDefault();
+
+    this.props.filterPRICE(price);
   }
 
 
@@ -133,7 +148,7 @@ class ItemGrid extends Component {
             <h5>Color:</h5>
             <ul className="color-list">
               <li className="swatch color-swatch-black pointer">
-                <a href="/item">  </a>
+                <a href="/item" onClick={(event) => this.filterColor(event, 1, this.state.checked[0])}>  </a>
               </li>
               <li className="swatch color-swatch-blue pointer">
                 <a href="/item">  </a>
