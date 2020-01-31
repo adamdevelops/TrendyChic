@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { addITEM, addFAVORITE, filterSIZE } from '../actions';
+import { addITEM, addFAVORITE, filterSIZE, filterCOLOR, filterPRICE } from '../actions';
 // import Slider from 'react-rangeslider'
 import '../styles.css';
 // import 'react-rangeslider/lib/index.css'
@@ -13,13 +13,15 @@ class ItemGrid extends Component {
     this.state = {
       checked: [false, false, false, false, false, false],
 
-      checked_color: [false, false, false, false, false, false, false, false, false, false, false]
+      checked_color: false
     }
 
     this.openSearchBar = this.openSearchBar.bind(this);
     this.addFavorite = this.addFavorite.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.filterSize = this.filterSize.bind(this);
+    this.filterColor = this.filterColor.bind(this);
+    this.filterPrice = this.filterPrice.bind(this);
 
   }
 
@@ -60,9 +62,10 @@ class ItemGrid extends Component {
   filterPrice = (event, price) => {
     console.log('filterPrice');
 
-    event.preventDefault();
 
     this.props.filterPRICE(price);
+    event.preventDefault();
+
   }
 
 
@@ -147,8 +150,8 @@ class ItemGrid extends Component {
           <div className="color-box">
             <h5>Color:</h5>
             <ul className="color-list">
-              <li className="swatch color-swatch-black pointer">
-                <a href="/item" onClick={(event) => this.filterColor(event, 1, this.state.checked[0])}>  </a>
+              <li className="swatch color-swatch-black pointer" onClick={(event) => this.filterColor(event, 1)}>
+                <a href="/item" >  </a>
               </li>
               <li className="swatch color-swatch-blue pointer">
                 <a href="/item">  </a>
@@ -189,11 +192,11 @@ class ItemGrid extends Component {
             <h5 className="">Price:</h5>
             <ul className="prices">
               <li><a href="/item" className="pointer">$10</a></li>
-              <li><a href="/item" className="pointer">$20</a></li>
-              <li><a href="/item" className="pointer">$30</a></li>
-              <li><a href="/item" className="pointer">$40</a></li>
-              <li><a href="/item" className="pointer">$50</a></li>
-              <li><a href="/item" className="pointer">$100</a></li>
+              <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 20)}>$20</a></li>
+              <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 30)}>$30</a></li>
+              <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 40)}>$40</a></li>
+              <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 50)}>$50</a></li>
+              <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 100)}>$100</a></li>
             </ul>
           </div>
         </div>
@@ -216,4 +219,4 @@ const mapStateToProps = (state) => {
   return{clothing: state.apps.displayed_clothing}
 }
 
-export default connect(mapStateToProps, {addITEM, addFAVORITE, filterSIZE})(ItemGrid);
+export default connect(mapStateToProps, {addITEM, addFAVORITE, filterSIZE, filterCOLOR, filterPRICE})(ItemGrid);
