@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
 import { Link } from 'react-router-dom'
 
 import '../styles.css';
@@ -17,6 +19,8 @@ class Header extends Component {
   }
 
   render(){
+    const cart_count = this.props.cart.length;
+
     return(
       <div id="header">
         <div id="logo-area">
@@ -30,11 +34,20 @@ class Header extends Component {
         <div id="user-menu">
           <i className="user-icon fa fa-search fa-2x pointer" aria-hidden="true" onClick={this.openSearchBar}></i>
           <Link className="pointer" to="/account"><i className="user-icon fa fa-user-circle fa-2x pointer" aria-hidden="true"></i></Link>
-          <Link className="pointer" to="/checkout"><i className="user-icon fa fa-shopping-bag fa-2x pointer" aria-hidden="true"></i></Link>
+          <Link className="pointer" to="/checkout"><i className="user-icon fa fa-shopping-bag fa-2x pointer" aria-hidden="true"></i>{cart_count}</Link>
         </div>
       </div>
     );
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  console.log('State in ItemGrid')
+  console.log(state)
+  console.log(state.apps.act)
+  console.log(state.apps.displayed_clothing)
+
+  return{cart: state.apps.act.cart}
+}
+
+export default connect(mapStateToProps)(Header);

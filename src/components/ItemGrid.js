@@ -191,7 +191,7 @@ class ItemGrid extends Component {
           <div className="price-range">
             <h5 className="">Price:</h5>
             <ul className="prices">
-              <li><a href="/item" className="pointer">$10</a></li>
+              <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 10)}>$10</a></li>
               <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 20)}>$20</a></li>
               <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 30)}>$30</a></li>
               <li><a href="/item" className="pointer" onClick={(event) => this.filterPrice(event, 40)}>$40</a></li>
