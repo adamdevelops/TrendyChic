@@ -31,6 +31,7 @@
 #user-menu {
   float: right;
   width: 200px;
+  height: 90px;
   margin-right: 10px;
   display: inline-block;
   position: relative;
@@ -45,6 +46,23 @@
   display: inline;
   padding-right: 10%;
   }
+
+.no-pad-right{
+  padding-right: 0 !important;
+}
+
+.cart_count{
+  display: inline-block;
+  color: white;
+  background: black;
+  margin-bottom: 0;
+  position: relative;
+  top: 10px;
+  padding-left: 7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
 
 #mainmenu{
   text-align: center;

@@ -34,7 +34,7 @@ class Header extends Component {
         <div id="user-menu">
           <i className="user-icon fa fa-search fa-2x pointer" aria-hidden="true" onClick={this.openSearchBar}></i>
           <Link className="pointer" to="/account"><i className="user-icon fa fa-user-circle fa-2x pointer" aria-hidden="true"></i></Link>
-          <Link className="pointer" to="/checkout"><i className="user-icon fa fa-shopping-bag fa-2x pointer" aria-hidden="true"></i>{cart_count}</Link>
+          <Link className="pointer" to="/checkout"><i className="user-icon fa fa-shopping-bag fa-2x pointer no-pad-right" aria-hidden="true"></i>{cart_count === 0 ? ('') : (<p className="cart_count">{cart_count}</p>)}</Link>
         </div>
       </div>
     );
