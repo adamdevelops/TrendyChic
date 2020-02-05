@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { addITEM, addFAVORITE, filterSIZE, filterCOLOR, filterPRICE } from '../actions';
 // import Slider from 'react-rangeslider'
 import '../styles.css';
 // import 'react-rangeslider/lib/index.css'
 
+const fav_heart = {
+  color: 'black',
+};
 
 class ItemGrid extends Component {
   constructor(props){
@@ -29,7 +33,16 @@ class ItemGrid extends Component {
     this.setState({showSearchBar: !this.state.showSearchBar});
   }
 
-  addFavorite = (event, item) => {
+  addFavorite = (event, item, id) => {
+    // fav_heart = {
+    //   color: 'red',
+    // };
+
+    let icon = 'fav-icon' + id
+    console.log(icon);
+
+    const fav_h = document.getElementById(icon)
+    ReactDOM.findDOMNode(fav_h).style.color = 'red';
     this.props.addFAVORITE(item);
   }
 
@@ -62,13 +75,9 @@ class ItemGrid extends Component {
   filterPrice = (event, price) => {
     console.log('filterPrice');
 
-
     this.props.filterPRICE(price);
     event.preventDefault();
-
   }
-
-
 
   handleChangeStart = () => {
     console.log('Change event started')
@@ -85,11 +94,13 @@ class ItemGrid extends Component {
   };
 
   renderClothing(){
+
+
     return this.props.clothing.map((item) => {
       return(
         <div className="item-product" key={item.id}>
           <img className="item" src={item.imgSrc} alt="clothing item" />
-          <i className="fa fa-heart fav-icon pointer" aria-hidden="true" onClick={(event) => this.addFavorite(event, item)}></i>
+          <a className="fav-link"><i id={`fav-icon${item.id}`} className="fa fa-heart fav-icon pointer" style={fav_heart} aria-hidden="true" onClick={(event) => this.addFavorite(event, item, item.id)}></i></a>
           <p className="item-name">{item.name}</p>
           <p className="item-price">${item.price}</p> <button className="addtoCart_btn" onClick={(event) => this.addToCart(event, item)}>Add</button>
         </div>
