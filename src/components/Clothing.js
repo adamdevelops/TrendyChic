@@ -15,7 +15,7 @@ const Clothing = () => {
         <Link className="feat_name">Tops</Link>
       </div>
       <div className="feat_item">
-        <Link id="bottoms" className="feat_pic" to="/item">
+        <Link id="bottoms" className="feat_pic" to="/bottoms">
           <img className="feat_pic" src="/rsz_pants.jpg" alt="featured section bottoms menu"/>
         </Link>
         <Link className="feat_name">Bottoms</Link>

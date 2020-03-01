@@ -38,11 +38,12 @@ class ItemGrid extends Component {
     //   color: 'red',
     // };
 
-    let icon = 'fav-icon' + id
-    console.log(icon);
+    let icon_id = 'fav-icon' + id;
+    console.log(icon_id)
 
-    const fav_h = document.getElementById(icon)
-    ReactDOM.findDOMNode(fav_h).style.color = 'red';
+    let fav_heart = document.getElementById(icon_id);
+    ReactDOM.findDOMNode(fav_heart).style.color = 'red';
+
     this.props.addFAVORITE(item);
   }
 
@@ -94,12 +95,12 @@ class ItemGrid extends Component {
   };
 
   renderClothing(){
-
-
     return this.props.clothing.map((item) => {
       return(
         <div className="item-product" key={item.id}>
-          <img className="item" src={item.imgSrc} alt="clothing item" />
+          <img className="item" src={item.imgSrc + '.jpg'} alt="clothing item"
+            srcSet={`${item.imgSrc + '-small.jpg'} 300w, ${item.imgSrc + '.jpg'} 700w`}
+            />
           <a className="fav-link"><i id={`fav-icon${item.id}`} className="fa fa-heart fav-icon pointer" style={fav_heart} aria-hidden="true" onClick={(event) => this.addFavorite(event, item, item.id)}></i></a>
           <p className="item-name">{item.name}</p>
           <p className="item-price">${item.price}</p> <button className="addtoCart_btn" onClick={(event) => this.addToCart(event, item)}>Add</button>
@@ -108,8 +109,6 @@ class ItemGrid extends Component {
     }
   )
 }
-
-
 
   render(){
     console.log('props')
@@ -164,10 +163,10 @@ class ItemGrid extends Component {
               <li className="swatch color-swatch-black pointer" onClick={(event) => this.filterColor(event, 1)}>
                 <a href="/item" >  </a>
               </li>
-              <li className="swatch color-swatch-blue pointer">
+              <li className="swatch color-swatch-blue pointer" onClick={(event) => this.filterColor(event, 2)}>
                 <a href="/item">  </a>
               </li>
-              <li className="swatch color-swatch-red pointer">
+              <li className="swatch color-swatch-red pointer" onClick={(event) => this.filterColor(event, 3)}>
                 <a href="/item">  </a>
               </li>   <br />
               <li className="swatch color-swatch-nude pointer">

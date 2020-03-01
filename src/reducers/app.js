@@ -6,15 +6,26 @@ const initialState = {
         favorites: []
       },
       clothing: [  // XS: 1
-        {id: 1, name: "Light Blue Dress", price: 20, imgSrc: "/tops/1.jpg", color: 1, size: [1,3]},
-        {id: 2, name: "Nude Dress with Blue Floral Design", price: 20, imgSrc: "/tops/4.jpg", size: 2},
-        {id: 3, name: "White Dress with Gold Design", price: 15, imgSrc: "/tops/5.jpg", size: 3},
-        {id: 4, name: "Brown Button Shirt", price: 15, imgSrc: "/tops/6.jpg", size: 1, color: 1},
-        {id: 5, name: "Yellow Dress", price: 27, imgSrc: "/tops/7.jpg", size: 4},
-        {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8.jpg", size: [2,3]},
-        {id: 7, name: "White Blossom Mary shirt", price: 13, imgSrc: "/tops/9.jpg", size: 1},
-        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3.jpg", size: [2,4]},
-        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10.jpg", size: [1,4]}
+        {id: 1, name: "Light Blue Dress", price: 20, imgSrc: "/tops/1", color: 1, size: [1,3]},
+        {id: 2, name: "Nude Dress with Blue Floral Design", price: 20, imgSrc: "/tops/4", size: 2, color: 2},
+        {id: 3, name: "White Dress with Gold Design", price: 15, imgSrc: "/tops/5", size: 3},
+        {id: 4, name: "Brown Button Shirt", price: 15, imgSrc: "/tops/6", size: 1, color: 1},
+        {id: 5, name: "Yellow Dress", price: 27, imgSrc: "/tops/7", size: 4, color: [2,3]},
+        {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8", size: [2,3]},
+        {id: 7, name: "White Blossom Mary shirt", price: 10, imgSrc: "/tops/9", size: 1},
+        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3", size: [2,4]},
+        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10", size: [1,4], color: 2}
+      ],
+      bottoms: [
+        {id: 10, name: "Dark Wash Jeans with Gold stitching", price: 25, imgSrc: "/bottoms/10", color: 1, size: [1,2]},
+        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3", size: [2,4]},
+        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10", size: [1,4], color: 2}
+      ],
+      shoes: [
+
+      ],
+      accessories: [
+
       ],
       displayed_clothing: [],
 };
@@ -131,7 +142,17 @@ const appsReducer = (state = initialState, action) => {
 
             console.log(colorID)
 
-            filtered_color_clothes = state.clothing.filter(item => item.color === colorID);
+            // filtered_color_clothes = state.clothing.filter(item => item.color === colorID);
+
+            filtered_color_clothes = state.clothing.filter(item => {
+              if (item.color instanceof Array){
+                console.log('if')
+                for(var i=0; i < item.color.length; i++){
+                  return item.color[i] === colorID
+                }
+              }
+              return item.color === colorID;
+            });
 
 
             console.log('filtered_color_clothes')
