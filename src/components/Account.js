@@ -21,14 +21,14 @@ class Account extends Component {
     return this.props.history.map((order_history) => {
       return (
       <div key={order_history.id}>
-        <p>Order #: {order_history.id}</p>
-        <p>Date: {order_history.date}</p>
+        <p className="order-number">Order #: {order_history.id}</p>
+        <p className="order-date">Date: {order_history.date}</p>
         {order_history.items.map((item) => {
               return(
-                <div className="checkout-item" key={item.id}>
-                  <img className="act-item-pic fleft" src={item.imgSrc} alt="clothing item"/>
-                  <p className="item-name">{item.name}</p>
-                  <p className="item-price">${item.price}</p>
+                <div className="order-item" key={item.id}>
+                  <img className="act-item-pic fleft" src={item.imgSrc + '.jpg'} alt="clothing item"/>
+                  <p className="act-item-description">{item.name}</p>
+                  <p className="act-item-description">${item.price}</p>
                 </div>
                 )
           })
@@ -49,9 +49,9 @@ class Account extends Component {
       return(
         <div key={favorites_item.id}>
           <div className="checkout-item">
-            <img className="act-item-pic fleft" src={favorites_item.imgSrc} alt="clothing item"/>
-            <p className="item-name">{favorites_item.name}</p>
-            <p className="item-price">${favorites_item.price}</p>
+            <img className="act-item-pic fleft" src={favorites_item.imgSrc + '.jpg'} alt="clothing item"/>
+            <p className="act-item-description">{favorites_item.name}</p>
+            <p className="act-item-description">${favorites_item.price}</p>
             <button className="remove_button" onClick={(event) => this.deleteFavorite(event, favorites_item)}>Remove</button>
           </div>
           <hr />

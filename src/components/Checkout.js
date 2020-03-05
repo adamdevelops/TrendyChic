@@ -27,12 +27,12 @@ class Checkout extends Component {
       return(
         <div key={cart_item.id}>
           <div className="checkout-item" key={cart_item.id}>
-            <img className="checkout-item-pic fleft" src={cart_item.imgSrc} alt="clothing item"/>
-            <p className="item-name">{cart_item.name}</p>
-            <p className="item-price">${cart_item.price}</p>
+            <img className="checkout-item-pic fleft" src={cart_item.imgSrc + '.jpg'} alt="clothing item"/>
+            <p className="checkout-item-name">{cart_item.name}</p>
+            <p className="cart_item-price">${cart_item.price}</p>
             <button className="remove_button" onClick={(event) => this.deleteFromCart(event, cart_item)}>Remove</button>
           </div>
-          <hr />
+          <hr className="divider"/>
         </div>
       )
     }
