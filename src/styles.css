@@ -611,6 +611,36 @@ input[type=text] {
     margin-left: 10px;
   }
 
+  #featured_section{
+    margin-left: 0;
+  }
+
+  .feat_item{
+    width: 350px;
+    height: 600px;
+    display: inline-block;
+    padding: 10px 10px;
+    overflow-y: hidden;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .feat_pic{
+    min-width: 350px;
+    height: 500px;
+  }
+
+
+  .feat_name{
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+  }
+
   .footer_title{
     font-size: 1.2rem;
   }
