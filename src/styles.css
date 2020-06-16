@@ -288,6 +288,7 @@
 
 .item{
   height: 500px;
+  width: 100%;
   object-fit: cover;
   background-position: center center;
 }
@@ -591,6 +592,7 @@ input[type=text] {
 
   .recent-orders{
     width: 300px;
+    margin-bottom: 0;
   }
 
   .order-number{
@@ -599,6 +601,11 @@ input[type=text] {
 
   .order-item{
     width: 300px;
+    padding-bottom: 20px;
+  }
+
+  .favorites{
+    margin-top: 0;
   }
 
   .act-item-description{

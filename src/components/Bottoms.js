@@ -10,7 +10,7 @@ const fav_heart = {
   color: 'black',
 };
 
-class ItemGrid extends Component {
+class Bottoms extends Component {
   constructor(props){
     super(props);
 
@@ -111,8 +111,6 @@ class ItemGrid extends Component {
 }
 
   render(){
-    console.log('props')
-    console.log(this.props.clothing)
     return(
       <div id="item-area">
         <div id="side-menu">
@@ -224,9 +222,9 @@ const mapStateToProps = (state) => {
   console.log(state.apps.clothing)
   console.log(state.apps.displayed_clothing)
   if (state.apps.displayed_clothing === undefined | state.apps.displayed_clothing.length === 0){
-    return {clothing: state.apps.clothing}
+    return {clothing: state.apps.bottoms}
   };
   return{clothing: state.apps.displayed_clothing}
 }
 
-export default connect(mapStateToProps, {addITEM, addFAVORITE, filterSIZE, filterCOLOR, filterPRICE})(ItemGrid);
+export default connect(mapStateToProps, {addITEM, addFAVORITE, filterSIZE, filterCOLOR, filterPRICE})(Bottoms);

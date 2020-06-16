@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.7.0",
+    "axios": "^0.19.2",
     "lodash": "^4.17.15",
     "node-uuid": "^1.4.8",
     "react": "^16.10.2",

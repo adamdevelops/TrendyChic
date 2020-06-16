@@ -65,12 +65,13 @@ export const deleteFAVORITE = item => {
   };
 };
 
-export const filterSIZE = (size, checked_status) => {
+export const filterSIZE = (size, checked_status, clothing) => {
   return{
     type: 'FILTER_SIZE',
     payload: {
       id: size,
-      checked_status: checked_status
+      checked_status: checked_status,
+      clothing: clothing
     }
   };
 };

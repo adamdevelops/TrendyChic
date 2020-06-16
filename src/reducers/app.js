@@ -12,20 +12,42 @@ const initialState = {
         {id: 4, name: "Brown Button Shirt", price: 15, imgSrc: "/tops/6", size: 1, color: 1},
         {id: 5, name: "Yellow Dress", price: 27, imgSrc: "/tops/7", size: 4, color: [2,3]},
         {id: 6, name: "White Dress with Flower Design", price: 40, imgSrc: "/tops/8", size: [2,3]},
-        {id: 7, name: "White Blossom Mary shirt", price: 10, imgSrc: "/tops/9", size: 1},
+        {id: 7, name: "White Blossom Mary Shirt", price: 10, imgSrc: "/tops/9", size: 1},
         {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3", size: [2,4]},
         {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10", size: [1,4], color: 2}
       ],
       bottoms: [
-        {id: 10, name: "Dark Wash Jeans with Gold stitching", price: 25, imgSrc: "/bottoms/10", color: 1, size: [1,2]},
-        {id: 8, name: "White Dress with Black Design", price: 22, imgSrc: "/tops/3", size: [2,4]},
-        {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10", size: [1,4], color: 2}
+        {id: 1, name: "Blue Jeans", price: 23, imgSrc: "/bottoms/1", color: 1, size: [1,2]},
+        {id: 2, name: "Black Leather Pants", price: 16, imgSrc: "/bottoms/2", color: 1, size: [1,2]},
+        {id: 3, name: "Blue Distressed Jeans", price: 13, imgSrc: "/bottoms/3", color: 1, size: [2,3]},
+        {id: 4, name: "Black & White Checkered Skirt", price: 11, imgSrc: "/bottoms/4", color: 1, size: [3,4]},
+        {id: 5, name: "Black Skirt with White Flowers", price: 14, imgSrc: "/bottoms/5", color: 1, size: [3,4]},
+        {id: 6, name: "Red and Black Polka dot Skirt", price: 8, imgSrc: "/bottoms/6", color: 1, size: [2,3]},
+        {id: 7, name: "Cheetah Print Skirt", price: 14, imgSrc: "/bottoms/7", color: 1, size: [1,2]},
+        {id: 8, name: "Brown Corduroy Pants", price: 22, imgSrc: "/bottoms/8", size: [2,4]},
+        {id: 9, name: "Light Blue Shorts", price: 17, imgSrc: "/bottoms/9", size: [1,4], color: 2}
       ],
       shoes: [
-
+        {id: 1, name: "", price: 25, imgSrc: "/bottoms/1", color: 1, size: [1,2]},
+        {id: 2, name: "", price: 25, imgSrc: "/bottoms/2", color: 1, size: [1,2]},
+        {id: 3, name: "", price: 25, imgSrc: "/bottoms/3", color: 1, size: [1,2]},
+        {id: 4, name: "", price: 25, imgSrc: "/bottoms/4", color: 1, size: [1,2]},
+        {id: 5, name: "", price: 25, imgSrc: "/bottoms/5", color: 1, size: [1,2]},
+        {id: 6, name: "", price: 25, imgSrc: "/bottoms/6", color: 1, size: [1,2]},
+        {id: 7, name: "", price: 25, imgSrc: "/bottoms/7", color: 1, size: [1,2]},
+        {id: 8, name: "", price: 22, imgSrc: "/bottoms/8", size: [2,4]},
+        {id: 9, name: "", price: 17, imgSrc: "/bottoms/9", size: [1,4], color: 2}
       ],
       accessories: [
-
+        {id: 1, name: "", price: 25, imgSrc: "/bottoms/1", color: 1, size: [1,2]},
+        {id: 2, name: "", price: 25, imgSrc: "/bottoms/2", color: 1, size: [1,2]},
+        {id: 3, name: "", price: 25, imgSrc: "/bottoms/3", color: 1, size: [1,2]},
+        {id: 4, name: "", price: 25, imgSrc: "/bottoms/4", color: 1, size: [1,2]},
+        {id: 5, name: "", price: 25, imgSrc: "/bottoms/5", color: 1, size: [1,2]},
+        {id: 6, name: "", price: 25, imgSrc: "/bottoms/6", color: 1, size: [1,2]},
+        {id: 7, name: "", price: 25, imgSrc: "/bottoms/7", color: 1, size: [1,2]},
+        {id: 8, name: "", price: 22, imgSrc: "/bottoms/8", size: [2,4]},
+        {id: 9, name: "", price: 17, imgSrc: "/bottoms/9", size: [1,4], color: 2}
       ],
       displayed_clothing: [],
 };
@@ -115,7 +137,9 @@ const appsReducer = (state = initialState, action) => {
           const sizeID = action.payload.id;
           let filtered_clothes = [];
 
-          filtered_clothes = state.clothing.filter(item => {
+          console.log(action.payload)
+
+          filtered_clothes = action.payload.clothing.filter(item => {
             if (item.size instanceof Array){
               console.log('if')
               for(var i=0; i < item.size.length; i++){

@@ -16,7 +16,7 @@ class Featured extends Component {
           <Link className="feat_name" to="/item">Tops</Link>
         </div>
         <div className="feat_item">
-          <Link id="bottoms" className="feat_pic" to="/item">
+          <Link id="bottoms" className="feat_pic" to="/bottoms">
             <img className="feat_pic" src="/rsz_pants.jpg" alt="clothing item" />
           </Link>
           <Link className="feat_name" to="/item">Bottoms</Link>
