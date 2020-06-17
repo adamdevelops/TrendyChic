@@ -39,15 +39,13 @@ const initialState = {
         {id: 9, name: "Suede Stilettos", price: 50, imgSrc: "/shoes/9", color: 6, size: [1,4]}
       ],
       accessories: [
-        {id: 1, name: "", price: 25, imgSrc: "/accessories/1", color: 1, size: [1,2]},
-        {id: 2, name: "", price: 25, imgSrc: "/accessories/2", color: 1, size: [1,2]},
-        {id: 3, name: "", price: 25, imgSrc: "/accessories/3", color: 1, size: [1,2]},
-        {id: 4, name: "", price: 25, imgSrc: "/accessories/4", color: 1, size: [1,2]},
-        {id: 5, name: "", price: 25, imgSrc: "/accessories/5", color: 1, size: [1,2]},
-        {id: 6, name: "", price: 25, imgSrc: "/accessories/6", color: 1, size: [1,2]},
-        {id: 7, name: "", price: 25, imgSrc: "/accessories/7", color: 1, size: [1,2]},
-        {id: 8, name: "", price: 22, imgSrc: "/accessories/8", color: 4, size: [2,4]},
-        {id: 9, name: "", price: 17, imgSrc: "/accessories/9", color: 2, size: [1,4]}
+        {id: 1, name: "Assorted Braceletes", price: 19, imgSrc: "/acc/1", color: 1, size: [1,2]},
+        {id: 2, name: "Faith Bracelet", price: 27, imgSrc: "/acc/2", color: 1, size: [1,2]},
+        {id: 3, name: "Diamond Band", price: 90, imgSrc: "/acc/3", color: 1, size: [1,2]},
+        {id: 4, name: "Dark Tiger Bead Bracelet", price: 20, imgSrc: "/acc/4", color: 1, size: [1,2]},
+        {id: 5, name: "Black Quartz Watch", price: 43, imgSrc: "/acc/5", color: 1, size: [1,2]},
+        {id: 6, name: "Sapphire Bracelet", price: 67, imgSrc: "/acc/6", color: 1, size: [1,2]},
+        {id: 7, name: "Rose colored Watch", price: 25, imgSrc: "/acc/7", color: 1, size: [1,2]},
       ],
       displayed_clothing: [],
 };
