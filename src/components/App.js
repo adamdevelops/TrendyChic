@@ -8,6 +8,8 @@ import Home from './Home';
 import Clothing from './Clothing';
 import ItemGrid from './ItemGrid';
 import Bottoms from './Bottoms';
+import Shoes from './Shoes';
+import Accessories from './Accessories';
 import Checkout from './Checkout';
 import Account from './Account';
 
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/clothing" component={Clothing} />
         <Route path="/item" component={ItemGrid} />
         <Route path="/bottoms" component={Bottoms} />
+        <Route path="/shoes" component={Shoes} />
+        <Route path="/accessories" component={Accessories} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/account" component={Account} />
         <Footer />

@@ -76,20 +76,22 @@ export const filterSIZE = (size, checked_status, clothing) => {
   };
 };
 
-export const filterCOLOR = color => {
+export const filterCOLOR = (color, clothing) => {
   return{
     type: 'FILTER_COLOR',
     payload: {
       id: color,
+      clothing: clothing
     }
   };
 };
 
-export const filterPRICE = price => {
+export const filterPRICE = (price, clothing) => {
   return{
     type: 'FILTER_PRICE',
     payload: {
       id: price,
+      clothing: clothing
     }
   };
 };

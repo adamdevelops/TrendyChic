@@ -21,13 +21,13 @@ const Clothing = () => {
         <Link className="feat_name">Bottoms</Link>
       </div>
       <div className="feat_item">
-        <Link id="shoes" className="feat_pic" to="/item">
+        <Link id="shoes" className="feat_pic" to="/shoes">
           <img className="feat_pic" src="/rsz_shoes.jpg" alt="featured section shoes menu"/>
         </Link>
         <Link className="feat_name">Shoes</Link>
       </div>
       <div className="feat_item">
-        <Link id="accessories" className="feat_pic" to="/item">
+        <Link id="accessories" className="feat_pic" to="/accessories">
           <img className="" src="/rsz_accessories.jpg" alt="featured section accessories menu"/>
         </Link>
         <Link className="feat_name">Accessories</Link>

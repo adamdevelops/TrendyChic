@@ -70,14 +70,15 @@ class ItemGrid extends Component {
 
     event.preventDefault();
 
-    this.props.filterCOLOR(color);
+    this.props.filterCOLOR(color, this.props.clothing);
   }
 
   filterPrice = (event, price) => {
     console.log('filterPrice');
 
-    this.props.filterPRICE(price);
     event.preventDefault();
+
+    this.props.filterPRICE(price, this.props.clothing);
   }
 
   handleChangeStart = () => {
@@ -159,44 +160,44 @@ class ItemGrid extends Component {
           </div>
           <div className="color-box">
             <h5>Color:</h5>
-            <ul className="color-list">
-              <li className="swatch color-swatch-black pointer" onClick={(event) => this.filterColor(event, 1)}>
-                <a href="/item" >  </a>
-              </li>
-              <li className="swatch color-swatch-blue pointer" onClick={(event) => this.filterColor(event, 2)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-red pointer" onClick={(event) => this.filterColor(event, 3)}>
-                <a href="/item">  </a>
-              </li>   <br />
-              <li className="swatch color-swatch-nude pointer">
+              <ul className="color-list">
+                <li className="swatch color-swatch-black pointer" onClick={(event) => this.filterColor(event, 1)}>
+                  <a href="/item" >  </a>
+                </li>
+                <li className="swatch color-swatch-blue pointer" onClick={(event) => this.filterColor(event, 2)}>
                   <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-white pointer">
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-grey pointer">
-                <a href="/item">  </a>
-              </li>   <br />
-              <li className="swatch color-swatch-purple pointer">
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-brown pointer">
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-yellow pointer">
-                <a href="/item">  </a>
-              </li>  <br />
-              <li className="swatch color-swatch-orange pointer">
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-pink pointer">
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-green pointer">
-                <a href="/item">  </a>
-              </li>  <br />
-            </ul>
+                </li>
+                <li className="swatch color-swatch-red pointer" onClick={(event) => this.filterColor(event, 3)}>
+                  <a href="/item">  </a>
+                </li>   <br />
+              <li className="swatch color-swatch-nude pointer" onClick={(event) => this.filterColor(event, 4)}>
+                    <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-white pointer" onClick={(event) => this.filterColor(event, 5)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-grey pointer" onClick={(event) => this.filterColor(event, 6)}>
+                  <a href="/item">  </a>
+                </li>   <br />
+              <li className="swatch color-swatch-purple pointer" onClick={(event) => this.filterColor(event, 7)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-brown pointer" onClick={(event) => this.filterColor(event, 8)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-yellow pointer" onClick={(event) => this.filterColor(event, 9)}>
+                  <a href="/item">  </a>
+                </li>  <br />
+              <li className="swatch color-swatch-orange pointer" onClick={(event) => this.filterColor(event, 10)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-pink pointer" onClick={(event) => this.filterColor(event, 11)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-green pointer" onClick={(event) => this.filterColor(event, 12)}>
+                  <a href="/item">  </a>
+                </li>  <br />
+              </ul>
           </div>
           <div className="price-range">
             <h5 className="">Price:</h5>
@@ -218,13 +219,34 @@ class ItemGrid extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+  let clothing_type = state.apps.clothing
+
+  console.log(props)
+
+  switch(props.type) {
+    case 1:
+      clothing_type = state.apps.clothing
+      break;
+    case 2:
+      clothing_type = state.apps.bottoms
+      break;
+    case 3:
+      clothing_type = state.apps.shoes
+      break;
+    case 4:
+      clothing_type = state.apps.accessories
+      break;
+  }
+  // if (props.type == 2){
+  //   clothing_type = state.apps.bottoms
+  // }
   console.log('State in ItemGrid')
   console.log(state)
   console.log(state.apps.clothing)
   console.log(state.apps.displayed_clothing)
   if (state.apps.displayed_clothing === undefined | state.apps.displayed_clothing.length === 0){
-    return {clothing: state.apps.clothing}
+    return {clothing: clothing_type}
   };
   return{clothing: state.apps.displayed_clothing}
 }

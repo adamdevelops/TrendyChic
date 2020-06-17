@@ -17,37 +17,37 @@ const initialState = {
         {id: 9, name: "White Floral Long Sleeve Dress", price: 27, imgSrc: "/tops/10", size: [1,4], color: 2}
       ],
       bottoms: [
-        {id: 1, name: "Blue Jeans", price: 23, imgSrc: "/bottoms/1", color: 1, size: [1,2]},
+        {id: 1, name: "Blue Jeans", price: 23, imgSrc: "/bottoms/1", color: 2, size: [1,2]},
         {id: 2, name: "Black Leather Pants", price: 16, imgSrc: "/bottoms/2", color: 1, size: [1,2]},
-        {id: 3, name: "Blue Distressed Jeans", price: 13, imgSrc: "/bottoms/3", color: 1, size: [2,3]},
+        {id: 3, name: "Blue Distressed Jeans", price: 13, imgSrc: "/bottoms/3", color: 2, size: [2,3]},
         {id: 4, name: "Black & White Checkered Skirt", price: 11, imgSrc: "/bottoms/4", color: 1, size: [3,4]},
         {id: 5, name: "Black Skirt with White Flowers", price: 14, imgSrc: "/bottoms/5", color: 1, size: [3,4]},
         {id: 6, name: "Red and Black Polka dot Skirt", price: 8, imgSrc: "/bottoms/6", color: 1, size: [2,3]},
         {id: 7, name: "Cheetah Print Skirt", price: 14, imgSrc: "/bottoms/7", color: 1, size: [1,2]},
-        {id: 8, name: "Brown Corduroy Pants", price: 22, imgSrc: "/bottoms/8", size: [2,4]},
-        {id: 9, name: "Light Blue Shorts", price: 17, imgSrc: "/bottoms/9", size: [1,4], color: 2}
+        {id: 8, name: "Brown Corduroy Pants", price: 22, imgSrc: "/bottoms/8", color: 8, size: [2,4]},
+        {id: 9, name: "Light Blue Shorts", price: 17, imgSrc: "/bottoms/9", color: 2, size: [1,4]}
       ],
       shoes: [
-        {id: 1, name: "", price: 25, imgSrc: "/bottoms/1", color: 1, size: [1,2]},
-        {id: 2, name: "", price: 25, imgSrc: "/bottoms/2", color: 1, size: [1,2]},
-        {id: 3, name: "", price: 25, imgSrc: "/bottoms/3", color: 1, size: [1,2]},
-        {id: 4, name: "", price: 25, imgSrc: "/bottoms/4", color: 1, size: [1,2]},
-        {id: 5, name: "", price: 25, imgSrc: "/bottoms/5", color: 1, size: [1,2]},
-        {id: 6, name: "", price: 25, imgSrc: "/bottoms/6", color: 1, size: [1,2]},
-        {id: 7, name: "", price: 25, imgSrc: "/bottoms/7", color: 1, size: [1,2]},
-        {id: 8, name: "", price: 22, imgSrc: "/bottoms/8", size: [2,4]},
-        {id: 9, name: "", price: 17, imgSrc: "/bottoms/9", size: [1,4], color: 2}
+        {id: 1, name: "Blue Canvas Shoes", price: 17, imgSrc: "/shoes/1", color: 2, size: [1,2]},
+        {id: 2, name: "Red Stilettos", price: 36, imgSrc: "/shoes/2", color: 3, size: [1,2]},
+        {id: 3, name: "Yellow Heels", price: 32, imgSrc: "/shoes/3", color: 9, size: [1,2]},
+        {id: 4, name: "Yellow Chucks", price: 19, imgSrc: "/shoes/4", color: 9, size: [1,2]},
+        {id: 5, name: "Yellow Platform shoes with Multicolor sole", price: 20, imgSrc: "/shoes/5", color: 1, size: [1,2]},
+        {id: 6, name: "Black Boots with Green laces", price: 18, imgSrc: "/shoes/6", color: 1, size: [1,2]},
+        {id: 7, name: "Yellow Boots", price: 25, imgSrc: "/shoes/7", color: 9, size: [1,2]},
+        {id: 8, name: "Black Knee Boots", price: 40, imgSrc: "/shoes/8", color: 1, size: [2,4]},
+        {id: 9, name: "Suede Stilettos", price: 50, imgSrc: "/shoes/9", color: 6, size: [1,4]}
       ],
       accessories: [
-        {id: 1, name: "", price: 25, imgSrc: "/bottoms/1", color: 1, size: [1,2]},
-        {id: 2, name: "", price: 25, imgSrc: "/bottoms/2", color: 1, size: [1,2]},
-        {id: 3, name: "", price: 25, imgSrc: "/bottoms/3", color: 1, size: [1,2]},
-        {id: 4, name: "", price: 25, imgSrc: "/bottoms/4", color: 1, size: [1,2]},
-        {id: 5, name: "", price: 25, imgSrc: "/bottoms/5", color: 1, size: [1,2]},
-        {id: 6, name: "", price: 25, imgSrc: "/bottoms/6", color: 1, size: [1,2]},
-        {id: 7, name: "", price: 25, imgSrc: "/bottoms/7", color: 1, size: [1,2]},
-        {id: 8, name: "", price: 22, imgSrc: "/bottoms/8", size: [2,4]},
-        {id: 9, name: "", price: 17, imgSrc: "/bottoms/9", size: [1,4], color: 2}
+        {id: 1, name: "", price: 25, imgSrc: "/accessories/1", color: 1, size: [1,2]},
+        {id: 2, name: "", price: 25, imgSrc: "/accessories/2", color: 1, size: [1,2]},
+        {id: 3, name: "", price: 25, imgSrc: "/accessories/3", color: 1, size: [1,2]},
+        {id: 4, name: "", price: 25, imgSrc: "/accessories/4", color: 1, size: [1,2]},
+        {id: 5, name: "", price: 25, imgSrc: "/accessories/5", color: 1, size: [1,2]},
+        {id: 6, name: "", price: 25, imgSrc: "/accessories/6", color: 1, size: [1,2]},
+        {id: 7, name: "", price: 25, imgSrc: "/accessories/7", color: 1, size: [1,2]},
+        {id: 8, name: "", price: 22, imgSrc: "/accessories/8", color: 4, size: [2,4]},
+        {id: 9, name: "", price: 17, imgSrc: "/accessories/9", color: 2, size: [1,4]}
       ],
       displayed_clothing: [],
 };
@@ -168,7 +168,7 @@ const appsReducer = (state = initialState, action) => {
 
             // filtered_color_clothes = state.clothing.filter(item => item.color === colorID);
 
-            filtered_color_clothes = state.clothing.filter(item => {
+            filtered_color_clothes = action.payload.clothing.filter(item => {
               if (item.color instanceof Array){
                 console.log('if')
                 for(var i=0; i < item.color.length; i++){
@@ -192,7 +192,7 @@ const appsReducer = (state = initialState, action) => {
               const priceID = action.payload.id;
               let filtered_price_clothes = [];
 
-             filtered_price_clothes = state.clothing.filter(item => item.price === priceID);
+             filtered_price_clothes = action.payload.clothing.filter(item => item.price === priceID);
 
               console.log('filtered_clothes')
               console.log(filtered_price_clothes);

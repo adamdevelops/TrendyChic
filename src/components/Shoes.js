@@ -159,42 +159,42 @@ class Bottoms extends Component {
           <div className="color-box">
             <h5>Color:</h5>
             <ul className="color-list">
-              <li className="swatch color-swatch-black pointer" onClick={(event) => this.filterColor(event, 1)}>
-                <a href="/item" >  </a>
-              </li>
-              <li className="swatch color-swatch-blue pointer" onClick={(event) => this.filterColor(event, 2)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-red pointer" onClick={(event) => this.filterColor(event, 3)}>
-                <a href="/item">  </a>
-              </li>   <br />
-            <li className="swatch color-swatch-nude pointer" onClick={(event) => this.filterColor(event, 4)}>
+                <li className="swatch color-swatch-black pointer" onClick={(event) => this.filterColor(event, 1)}>
+                  <a href="/item" >  </a>
+                </li>
+                <li className="swatch color-swatch-blue pointer" onClick={(event) => this.filterColor(event, 2)}>
                   <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-white pointer" onClick={(event) => this.filterColor(event, 5)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-grey pointer" onClick={(event) => this.filterColor(event, 6)}>
-                <a href="/item">  </a>
-              </li>   <br />
-            <li className="swatch color-swatch-purple pointer" onClick={(event) => this.filterColor(event, 7)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-brown pointer" onClick={(event) => this.filterColor(event, 8)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-yellow pointer" onClick={(event) => this.filterColor(event, 9)}>
-                <a href="/item">  </a>
-              </li>  <br />
-            <li className="swatch color-swatch-orange pointer" onClick={(event) => this.filterColor(event, 10)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-pink pointer" onClick={(event) => this.filterColor(event, 11)}>
-                <a href="/item">  </a>
-              </li>
-              <li className="swatch color-swatch-green pointer" onClick={(event) => this.filterColor(event, 12)}>
-                <a href="/item">  </a>
-              </li>  <br />
+                </li>
+                <li className="swatch color-swatch-red pointer" onClick={(event) => this.filterColor(event, 3)}>
+                  <a href="/item">  </a>
+                </li>   <br />
+              <li className="swatch color-swatch-nude pointer" onClick={(event) => this.filterColor(event, 4)}>
+                    <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-white pointer" onClick={(event) => this.filterColor(event, 5)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-grey pointer" onClick={(event) => this.filterColor(event, 6)}>
+                  <a href="/item">  </a>
+                </li>   <br />
+              <li className="swatch color-swatch-purple pointer" onClick={(event) => this.filterColor(event, 7)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-brown pointer" onClick={(event) => this.filterColor(event, 8)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-yellow pointer" onClick={(event) => this.filterColor(event, 9)}>
+                  <a href="/item">  </a>
+                </li>  <br />
+                <li className="swatch color-swatch-orange pointer" onClick={(event) => this.filterColor(event, 10)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-pink pointer" onClick={(event) => this.filterColor(event, 11)}>
+                  <a href="/item">  </a>
+                </li>
+                <li className="swatch color-swatch-green pointer" onClick={(event) => this.filterColor(event, 12)}>
+                  <a href="/item">  </a>
+                </li>  <br />
             </ul>
           </div>
           <div className="price-range">
@@ -223,7 +223,7 @@ const mapStateToProps = (state, props) => {
   console.log(state.apps.clothing)
   console.log(state.apps.displayed_clothing)
   if (state.apps.displayed_clothing === undefined | state.apps.displayed_clothing.length === 0){
-    return {clothing: state.apps.bottoms}
+    return {clothing: state.apps.shoes}
   };
   return{clothing: state.apps.displayed_clothing}
 }
