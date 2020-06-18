@@ -22,7 +22,7 @@ class Footer extends Component {
           <h4 className="footer_title">Contact Us</h4>
           <ul>
             <li className="footer_detail">Phone#: (800)-201-1789</li>
-            <li className="footer_detail">Email: jobs@trendychic.com</li>
+            <li className="footer_detail">Email: contactus@trendychic.com</li>
             <li><Link className="pointer footer_detail" to="/home">Looking to work with us?</Link></li>
           </ul>
         </div>

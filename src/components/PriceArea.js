@@ -1,16 +1,27 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { purchaseITEMS } from '../actions';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements} from '@stripe/react-stripe-js';
+
+const stripePromise = loadStripe("pk_test_51GuPZeD31gLM6mOREEIkNOJxkYuqPqnd6pYprQUnofThPTuXOsvzsBQXc8TinxiBnaooboo5S3dvXZudnwADCqSA004oI1T2nx");
+
 
 class PriceArea extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      fees: 0
+      fees: 0,
+      showCheckoutPayment: false
     };
 
     this.purchaseCartItems = this.purchaseCartItems.bind(this);
+    this.displayPaymentArea = this.displayPaymentArea.bind(this);
+  }
+
+  displayPaymentArea() {
+    this.setState({showCheckoutPayment: !this.state.showCheckoutPayment});
   }
 
   purchaseCartItems(event, items){
@@ -22,6 +33,8 @@ class PriceArea extends Component {
     this.props.purchaseITEMS(items, dateString);
   }
 
+
+
   render(){
     return(
     <div>
@@ -30,7 +43,21 @@ class PriceArea extends Component {
       <h5 className="checkout-total">Merchandise: <p className="fright">${this.props.cartprice}.00</p></h5>
       <h5 className="checkout-total">Fees: <p className="fright">${this.state.fees === 0 ? '0.00' : this.state.fees + '.00'}</p></h5>
       <h5 className="checkout-total">Final: <p className="fright">${this.props.cartprice + this.state.fees}.00</p></h5>
-      <button className="fright mobile-checkout-btn" onClick={(event) => this.purchaseCartItems(event, this.props.cartitems)}>Checkout</button>
+      <button type="button" className="fright mobile-checkout-btn" onClick={(event) => this.displayPaymentArea()}>Checkout</button>
+
+      <br />
+      <br />
+
+      {
+        this.state.showCheckoutPayment &&
+          <form>
+            <CardElement />
+            <button onClick = {(event) => this.purchaseCartItems(event, this.props.cartitems)}>Pay</button>
+          </form>
+      }
+
+
+
     </div>
   )}
 }

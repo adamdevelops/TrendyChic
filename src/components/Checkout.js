@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { deleteCART_ITEM } from '../actions';
 import PriceArea from './PriceArea';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 
 import { updateCartPrice } from '../reducers/app';
+
+const stripePromise = loadStripe("pk_test_51GuPZeD31gLM6mOREEIkNOJxkYuqPqnd6pYprQUnofThPTuXOsvzsBQXc8TinxiBnaooboo5S3dvXZudnwADCqSA004oI1T2nx");
+
 
 class Checkout extends Component {
   constructor(props){
@@ -20,6 +25,8 @@ class Checkout extends Component {
   deleteFromCart(event, item){
     this.props.deleteCART_ITEM(item);
   }
+
+
 
 
   renderCart(){
@@ -51,7 +58,10 @@ class Checkout extends Component {
           </div>
         </div>
         <div className="checkout-price">
-          <PriceArea cartprice={this.props.updateCartPrice} cartitems={this.props.cart} />
+          <Elements stripe={stripePromise}>
+            <PriceArea cartprice={this.props.updateCartPrice} cartitems={this.props.cart} />
+          </Elements>
+
         </div>
       </div>
     );
