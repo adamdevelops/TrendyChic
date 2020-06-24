@@ -58,9 +58,7 @@ class Checkout extends Component {
           </div>
         </div>
         <div className="checkout-price">
-          <Elements stripe={stripePromise}>
             <PriceArea cartprice={this.props.updateCartPrice} cartitems={this.props.cart} />
-          </Elements>
 
         </div>
       </div>

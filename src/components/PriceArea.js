@@ -3,9 +3,59 @@ import { connect } from 'react-redux';
 import { purchaseITEMS } from '../actions';
 import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, Elements, useStripe, useElements} from '@stripe/react-stripe-js';
+import axios from 'axios';
 
 const stripePromise = loadStripe("pk_test_51GuPZeD31gLM6mOREEIkNOJxkYuqPqnd6pYprQUnofThPTuXOsvzsBQXc8TinxiBnaooboo5S3dvXZudnwADCqSA004oI1T2nx");
 
+const CheckoutForm = (price) => {
+
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const handleSubmit = async event => {
+   event.preventDefault();
+
+   const billing_details = {
+     name: event.target.name.value,
+     email: event.target.email.value
+   }
+
+   const { error, paymentMethod } = await stripe.createPaymentMethod({
+     type: "card",
+     card: elements.getElement(CardElement),
+     billing_details: billing_details
+   });
+
+   if(!error){
+     const { id } = paymentMethod;
+
+     console.log(id);
+
+     try{
+       const { data } = await axios.post("http://localhost:3000/charge", {id, amount: price});
+     } catch (error){
+       console.log(error)
+     }
+   }
+ }
+
+  return(
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label className="checkout_label">Name:</label>
+        <input type="text" name="name" />
+      </div>
+      <div>
+        <label className="checkout_label">Email:</label>
+        <input type="email" name="email" />
+      </div>
+      <CardElement />
+      <button type="submit" disabled={!stripe}>Pay</button>
+    </form>
+  )
+}
+
+// onClick = {(event) => this.purchaseCartItems(event, this.props.cartitems)}
 
 class PriceArea extends Component {
   constructor(props){
@@ -20,6 +70,8 @@ class PriceArea extends Component {
     this.displayPaymentArea = this.displayPaymentArea.bind(this);
   }
 
+
+
   displayPaymentArea() {
     this.setState({showCheckoutPayment: !this.state.showCheckoutPayment});
   }
@@ -32,6 +84,8 @@ class PriceArea extends Component {
     console.log(items)
     this.props.purchaseITEMS(items, dateString);
   }
+
+
 
 
 
@@ -50,13 +104,8 @@ class PriceArea extends Component {
 
       {
         this.state.showCheckoutPayment &&
-          <form>
-            <CardElement />
-            <button onClick = {(event) => this.purchaseCartItems(event, this.props.cartitems)}>Pay</button>
-          </form>
+          <CheckoutForm price = {this.props.cartprice + this.state.fees}/>
       }
-
-
 
     </div>
   )}

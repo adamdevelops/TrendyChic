@@ -321,6 +321,10 @@
   width: 300px;
 }
 
+.checkoutlabels{
+
+}
+
 .fav-icon{
   position: relative;
   float: right;
@@ -358,6 +362,12 @@
   margin: 30px 30px;
   display: inline-block;
   vertical-align: top;
+}
+
+label {
+  display: inline-flex !important;
+  margin-left: 10px;
+  margin-right: auto;
 }
 
 #account-section{
@@ -423,7 +433,7 @@
   float: right;
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
   width: 200px;
   box-sizing: border-box;
   border: 2px solid #ccc;
