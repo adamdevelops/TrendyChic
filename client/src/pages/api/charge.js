@@ -1,7 +1,8 @@
 import Stripe from 'stripe';
+import { Router } from 'express';
 const stripe = new Stripe('sk_test_51GuPZeD31gLM6mOR8L08XK5fs4ZnipZLuyLdY2OmvaqaGyETtn6Z6umt4FdrstSi9xTrHMTXTUhXzoPkA9nTuVqC00YsNAMRqe')
 
-export default async (req,res) => {
+router.post("/charge", async (req, res) => {
   const { id, amount } = req.body;
 
   if(req.method === "POST"){
@@ -25,4 +26,4 @@ export default async (req,res) => {
     res.status(405).end("Method Not Allowed");
   }
 
-};
+});

@@ -17,7 +17,7 @@ const CheckoutForm = (price) => {
 
    const billing_details = {
      name: event.target.name.value,
-     email: event.target.email.value
+     email: 'a@huf.com'
    }
 
    const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -32,9 +32,9 @@ const CheckoutForm = (price) => {
      console.log(id);
 
      try{
-       const { data } = await axios.post("http://localhost:3000/charge", {id, amount: price});
+       const { data } = await axios.post('http://localhost:3000/checkout/api/payments', {id, amount: price});
      } catch (error){
-       console.log(error)
+       console.log(error.response)
      }
    }
  }
@@ -45,10 +45,7 @@ const CheckoutForm = (price) => {
         <label className="checkout_label">Name:</label>
         <input type="text" name="name" />
       </div>
-      <div>
-        <label className="checkout_label">Email:</label>
-        <input type="email" name="email" />
-      </div>
+
       <CardElement />
       <button type="submit" disabled={!stripe}>Pay</button>
     </form>
