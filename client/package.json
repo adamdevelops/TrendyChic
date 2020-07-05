@@ -20,7 +20,7 @@
     "react-scripts": "^3.3.4",
     "redux": "^4.0.4",
     "stripe": "^8.63.0",
-    "webpack": "^4.43.0"
+    "webpack": "4.42.0"
   },
   "scripts": {
     "start": "react-scripts start",

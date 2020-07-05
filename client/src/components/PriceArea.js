@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const stripePromise = loadStripe("pk_test_51GuPZeD31gLM6mOREEIkNOJxkYuqPqnd6pYprQUnofThPTuXOsvzsBQXc8TinxiBnaooboo5S3dvXZudnwADCqSA004oI1T2nx");
 
-const CheckoutForm = (price) => {
+const CheckoutForm = (props) => {
 
   const stripe = useStripe();
   const elements = useElements();
@@ -30,9 +30,11 @@ const CheckoutForm = (price) => {
      const { id } = paymentMethod;
 
      console.log(id);
+     console.log(props.price);
 
      try{
-       const { data } = await axios.post('http://localhost:3000/checkout/api/payments', {id, amount: price});
+       const { data } = await axios.post('http://localhost:5000/checkout/api/payments', {id, amount: props.price});
+       console.log(data);
      } catch (error){
        console.log(error.response)
      }

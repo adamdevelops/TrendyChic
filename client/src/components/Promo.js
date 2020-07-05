@@ -7,7 +7,7 @@ class Promo extends Component {
     return(
       <div id="promo">
         <picture>
-          <img className="responsive-promo" src="/rsz_adult-beautiful-black-clothes-1040424.jpg" alt="Promo"/>
+          <img className="responsive-promo" src="../extras/rsz_adult-beautiful-black-clothes-1040424.jpg" alt="Promo"/>
         </picture>
       </div>
     );
